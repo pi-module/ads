@@ -1,0 +1,190 @@
+<div class="ads">
+	<p>
+	   <a class="btn" title="<?php _e('New ads for web'); ?>" href="<?php echo $this->url('', array('action' => 'web')); ?>"><i class="icon-file"></i> <?php _e('New ads for web'); ?></a>
+	   <a class="btn" title="<?php _e('New ads for mobile'); ?>" href="<?php echo $this->url('', array('action' => 'mobile')); ?>"><i class="icon-file"></i> <?php _e('New ads for mobile'); ?></a>
+	</p>
+	<?php if (!empty($list1)) { ?>
+	<h3><?php _e('List of active ads for web'); ?></h3>
+	<table class="table table-striped table-bordered table-condensed">
+		<tr>
+			<th><?php _e('ID'); ?></th>
+			<th><?php _e('Information'); ?></th>
+			<th><?php _e('Action'); ?></th>
+		</tr>
+		<?php foreach($list1 as $item) { ?>
+		<tr>
+			<td><?php echo $this->escape($item['id']); ?></td>
+			<td>
+				<div class="media">
+					<a class="pull-left" href="#">
+						<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading"><?php echo $this->escape($item['title']); ?></h4>
+						<div clas="clearfix">
+							<div class="pull-left span5">
+								<p><strong><?php _e('Publish time'); ?></strong> : <?php echo $this->escape($item['time_publish']); ?></p>
+								<p><strong><?php _e('Expire time'); ?></strong> : <?php echo $this->escape($item['time_expire']); ?></p>
+							</div>
+							<div class="pull-left span5">
+								<p><strong><?php _e('View'); ?></strong> : <?php echo $this->escape($item['view']); ?></p>
+								<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</td>
+			<td></td>
+		</tr>
+		<?php } ?>
+	</table>	
+	<?php } ?>
+
+	<?php if (!empty($list2)) { ?>
+	<h3><?php _e('List of active ads for mobile'); ?></h3>
+	<table class="table table-striped table-bordered table-condensed">
+		<tr>
+			<th><?php _e('ID'); ?></th>
+			<th><?php _e('Information'); ?></th>
+			<th><?php _e('Action'); ?></th>
+		</tr>
+		<?php foreach($list2 as $item) { ?>
+		<tr>
+			<td><?php echo $this->escape($item['id']); ?></td>
+			<td>
+				<div class="media">
+					<a class="pull-left" href="#">
+						<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading"><?php echo $this->escape($item['title']); ?></h4>
+						<div clas="clearfix">
+							<div class="pull-left span5">
+								<p><strong><?php _e('Publish time'); ?></strong> : <?php echo $this->escape($item['time_publish']); ?></p>
+								<p><strong><?php _e('Expire time'); ?></strong> : <?php echo $this->escape($item['time_expire']); ?></p>
+							</div>
+							<div class="pull-left span5">
+								<p><strong><?php _e('View'); ?></strong> : <?php echo $this->escape($item['view']); ?></p>
+								<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
+							</div>
+						</div>
+					</div>
+				</div>		
+			</td>
+			<td></td>
+		</tr>
+		<?php } ?>
+	</table>
+	<?php } ?>
+
+	<?php if (!empty($list3)) { ?>
+	<h3><?php _e('List of nonpublish ads'); ?></h3>
+	<table class="table table-striped table-bordered table-condensed">
+		<tr>
+			<th><?php _e('ID'); ?></th>
+			<th><?php _e('Information'); ?></th>
+			<th><?php _e('Action'); ?></th>
+		</tr>
+		<?php foreach($list3 as $item) { ?>
+		<tr>
+			<td><?php echo $this->escape($item['id']); ?></td>
+			<td>
+				<div class="media">
+					<a class="pull-left" href="#">
+						<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading"><?php echo $this->escape($item['title']); ?></h4>
+						<div clas="clearfix">
+							<div class="pull-left span5">
+								<p><strong><?php _e('Publish time'); ?></strong> : <?php echo $this->escape($item['time_publish']); ?></p>
+								<p><strong><?php _e('Expire time'); ?></strong> : <?php echo $this->escape($item['time_expire']); ?></p>
+							</div>
+							<div class="pull-left span5">
+								<p><strong><?php _e('View'); ?></strong> : <?php echo $this->escape($item['view']); ?></p>
+								<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
+							</div>
+						</div>
+					</div>
+				</div>		
+			</td>
+			<td></td>
+		</tr>
+		<?php } ?>
+	</table>
+	<?php } ?>
+
+	<?php if (!empty($list4)) { ?>
+	<h3><?php _e('List of expire ads'); ?></h3>
+	<table class="table table-striped table-bordered table-condensed">
+		<tr>
+			<th><?php _e('ID'); ?></th>
+			<th><?php _e('Information'); ?></th>
+			<th><?php _e('Action'); ?></th>
+		</tr>
+		<?php foreach($list4 as $item) { ?>
+		<tr>
+			<td><?php echo $this->escape($item['id']); ?></td>
+			<td>
+				<div class="media">
+					<a class="pull-left" href="#">
+						<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading"><?php echo $this->escape($item['title']); ?></h4>
+						<div clas="clearfix">
+							<div class="pull-left span5">
+								<p><strong><?php _e('Publish time'); ?></strong> : <?php echo $this->escape($item['time_publish']); ?></p>
+								<p><strong><?php _e('Expire time'); ?></strong> : <?php echo $this->escape($item['time_expire']); ?></p>
+							</div>
+							<div class="pull-left span5">
+								<p><strong><?php _e('View'); ?></strong> : <?php echo $this->escape($item['view']); ?></p>
+								<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
+							</div>
+						</div>
+					</div>
+				</div>		
+			</td>
+			<td></td>
+		</tr>
+		<?php } ?>
+	</table>
+	<?php } ?>
+
+	<?php if (!empty($list5)) { ?>
+	<h3><?php _e('List of offline ads'); ?></h3>
+	<table class="table table-striped table-bordered table-condensed">
+		<tr>
+			<th><?php _e('ID'); ?></th>
+			<th><?php _e('Information'); ?></th>
+			<th><?php _e('Action'); ?></th>
+		</tr>
+		<?php foreach($list5 as $item) { ?>
+		<tr>
+			<td><?php echo $this->escape($item['id']); ?></td>
+			<td>
+				<div class="media">
+					<a class="pull-left" href="#">
+						<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading"><?php echo $this->escape($item['title']); ?></h4>
+						<div clas="clearfix">
+							<div class="pull-left span5">
+								<p><strong><?php _e('Publish time'); ?></strong> : <?php echo $this->escape($item['time_publish']); ?></p>
+								<p><strong><?php _e('Expire time'); ?></strong> : <?php echo $this->escape($item['time_expire']); ?></p>
+							</div>
+							<div class="pull-left span5">
+								<p><strong><?php _e('View'); ?></strong> : <?php echo $this->escape($item['view']); ?></p>
+								<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
+							</div>
+						</div>
+					</div>
+				</div>		
+			</td>
+			<td></td>
+		</tr>
+		<?php } ?>
+	</table>
+	<?php } ?>
+</div>
