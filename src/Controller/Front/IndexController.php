@@ -80,16 +80,15 @@ class IndexController extends ActionController
         $id = $this->params('id');
         $device = $this->params('device', 'web');
         // Check id and device
-        if (empty(intval($id))) {
-            return false;
+        if ($id) {
+            // find ads
+            $item = $this->getModel('propaganda')->find($id)->toArray();
+            // Update view
+            $this->getModel('propaganda')->update(array('click' => $item['click'] + 1), array('id' => $item['id']));
+            // Save log
+            Pi::service('api')->ads(array('Log', 'Click'), $item['id'], $device);
+            // redirect
+            return $this->redirect()->toUrl($item['url']);
         }
-        // find ads
-        $item = $this->getModel('propaganda')->find($id)->toArray();
-        // Update view
-        $this->getModel('propaganda')->update(array('click' => $item['click'] + 1), array('id' => $item['id']));
-        // Save log
-        Pi::service('api')->ads(array('Log', 'Click'), $item['id'], $device);
-        // redirect
-        return $this->redirect()->toUrl($item['url']);
     }	
 }	
