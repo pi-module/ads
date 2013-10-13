@@ -25,10 +25,9 @@ use Module\Ads\Form\MobileFilter;
 class IndexController extends ActionController
 {
     protected $propagandaColumns = array(
-        'id', 'title', 'url', 'status', 'time_create', 'time_publish', 'time_expire', 
+        'id', 'title', 'category', 'url', 'status', 'time_create', 'time_publish', 'time_expire', 
         'view', 'click', 'device', 'image_web', 'image_mobile_1', 'image_mobile_2', 'image_mobile_3'
     );
-    
  
     public function indexAction()
     {
@@ -135,7 +134,7 @@ class IndexController extends ActionController
             }
         } else {
             if ($id) {
-                $values = $this->getModel('propaganda')->find($values['id'])->toArray();
+                $values = $this->getModel('propaganda')->find($id)->toArray();
                 $form->setData($values);
                 $message = 'You can edit this ads';
             } else {

@@ -19,6 +19,7 @@ return array(
     // will be fix
     'schema' => array(
         'propaganda' => 'table',
+        'category' => 'table',
         'view_log' => 'table',
         'click_log' => 'table',
     )

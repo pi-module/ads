@@ -1,6 +1,7 @@
 CREATE TABLE `{propaganda}` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `title` varchar(255) NOT NULL,
+  `category` int(10) unsigned NOT NULL,
   `url` varchar(255) NOT NULL,
   `status` tinyint(1) unsigned NOT NULL,
   `time_create` int(10) unsigned NOT NULL,
@@ -18,7 +19,17 @@ CREATE TABLE `{propaganda}` (
   KEY `status` (`status`),
   KEY `click` (`click`),
   KEY `view` (`view`),
-  KEY `select` (`status`, `device`, `time_publish`, `time_expire`)
+  KEY `category` (`category`),
+  KEY `select_block` (`category`, `status`, `device`, `time_publish`, `time_expire`),
+  KEY `select_block_option` (`status`, `device`, `time_publish`, `time_expire`)
+);
+
+CREATE TABLE `{category}` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `title` varchar(255) NOT NULL,
+  `height` int(3) unsigned NOT NULL,
+  `width` int(3) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `{view_log}` (

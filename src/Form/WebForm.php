@@ -87,6 +87,18 @@ class WebForm extends BaseForm
                 'class' => 'span6',
             )
         ));
+        // category
+        $this->add(array(
+            'name' => 'category',
+            'type' => 'Module\Ads\Form\Element\Category',
+            'options' => array(
+                'label' => __('Category'),
+            ),
+            'attributes' => array(
+                'size' => 1,
+                'multiple' => 0,
+            ),
+        ));
         // time_publish
         $this->add(array(
             'name' => 'time_publish',

@@ -25,7 +25,7 @@ class Block
         $block = array_merge($block, $options);
         // Set info
         $order = array(new \Zend\Db\Sql\Predicate\Expression('RAND()'));
-        $where = array('device' => 'web', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time());
+        $where = array('category' => intval($block['category']), 'status' => 1, 'device' => 'web', 'time_publish < ?' => time(), 'time_expire > ?' => time());
         // Get random ads for mobile
         $select = Pi::model('propaganda', $module)->select()->where($where)->order($order)->limit(1);
         $row = Pi::model('propaganda', $module)->selectWith($select)->toArray();
@@ -52,24 +52,26 @@ class Block
         $block = array();
         $block = array_merge($block, $options);
         // find ads
-        $row = Pi::model('propaganda', $module)->find($block['adsid'])->toArray();
-        if (!empty($row) && 
-            $row['device'] == 'web' && 
-            $row['status'] == 1 && 
-            $row['time_publish'] < time() && 
-            $row['time_expire'] > time()
-        ) {
-            // Make ads array
-            $ads['title'] = $row['title'];
-            $ads['back_url'] = Pi::url(sprintf('/ads/click/%s/%s', $row['id'], $row['device']));
-            $ads['image_url'] = $row['image_web'];
-            // Update view
-            Pi::model('propaganda', $module)->update(array('view' => $row['view'] + 1), array('id' => $row['id']));
-            // Save log
-            Pi::service('api')->ads(array('Log', 'View'), $row['id'], 'web');
+        if (!empty(intval($block['propaganda']))) {
+            $row = Pi::model('propaganda', $module)->find(intval($block['propaganda']))->toArray();
+            if (!empty($row) && 
+                $row['device'] == 'web' && 
+                $row['status'] == 1 && 
+                $row['time_publish'] < time() && 
+                $row['time_expire'] > time()
+            ) {
+                // Make ads array
+                $ads['title'] = $row['title'];
+                $ads['back_url'] = Pi::url(sprintf('/ads/click/%s/%s', $row['id'], $row['device']));
+                $ads['image_url'] = $row['image_web'];
+                // Update view
+                Pi::model('propaganda', $module)->update(array('view' => $row['view'] + 1), array('id' => $row['id']));
+                // Save log
+                Pi::service('api')->ads(array('Log', 'View'), $row['id'], 'web');
+            }
+            // Set block array
+            $block['resources'] = $ads;
         }
-        // Set block array
-        $block['resources'] = $ads;
         return $block;
     }
 }

@@ -21,6 +21,12 @@ return array(
             'controller' => 'index',
             'action' => 'index',
         ),
+        'category' => array(
+            'label' => __('Category'),
+            'route' => 'admin',
+            'controller' => 'category',
+            'action' => 'index',
+        ),
         'logs' => array(
             'label' => __('Logs'),
             'route' => 'admin',

@@ -19,6 +19,15 @@ return array(
         'description' => '',
         'render' => array('block', 'random'),
         'template' => 'random',
+        'config' => array(
+            'category' => array(
+                'title' => __('Select category'),
+                'description' => '',
+                'edit' => 'Module\Ads\Form\Element\Category',
+                'filter' => 'number_int',
+                'value' => 0,
+            ),
+        ),
     ),
     // Select block
     'select' => array(
@@ -27,11 +36,11 @@ return array(
         'render' => array('block', 'select'),
         'template' => 'select',
         'config' => array(
-            'adsid' => array(
+            'propaganda' => array(
                 'title' => __('Select ads'),
                 'description' => '',
-                'edit' => 'Module\Ads\Form\Element\Adslist',
-                'filter' => 'string',
+                'edit' => 'Module\Ads\Form\Element\Propaganda',
+                'filter' => 'number_int',
                 'value' => 0,
             ),
         ),

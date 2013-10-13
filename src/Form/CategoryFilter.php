@@ -18,7 +18,7 @@ namespace Module\Ads\Form;
 use Pi;
 use Zend\InputFilter\InputFilter;
 
-class WebFilter extends InputFilter
+class CategoryFilter extends InputFilter
 {
     public function __construct()
     {
@@ -26,16 +26,6 @@ class WebFilter extends InputFilter
         $this->add(array(
             'name' => 'id',
             'required' => false,
-        ));
-        // device
-        $this->add(array(
-            'name' => 'device',
-            'required' => true,
-            'filters' => array(
-                array(
-                    'name' => 'StringTrim',
-                ),
-            ),
         ));
         // title
         $this->add(array(
@@ -47,14 +37,9 @@ class WebFilter extends InputFilter
                 ),
             ),
         ));
-        // category
+        // height
         $this->add(array(
-            'name' => 'category',
-            'required' => false,
-        ));
-        // url
-        $this->add(array(
-            'name' => 'url',
+            'name' => 'height',
             'required' => true,
             'filters' => array(
                 array(
@@ -62,30 +47,15 @@ class WebFilter extends InputFilter
                 ),
             ),
         ));
-        // image_web
+        // width
         $this->add(array(
-            'name' => 'image_web',
+            'name' => 'width',
             'required' => true,
             'filters' => array(
                 array(
                     'name' => 'StringTrim',
                 ),
             ),
-        ));
-        // time_publish
-        $this->add(array(
-            'name' => 'time_publish',
-            'required' => true,
-        ));
-        // time_expire
-        $this->add(array(
-            'name' => 'time_expire',
-            'required' => true,
-        ));
-        // status
-        $this->add(array(
-            'name' => 'status',
-            'required' => true,
         ));
     }
 }	
