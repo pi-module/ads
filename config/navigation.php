@@ -27,17 +27,5 @@ return array(
             'controller' => 'category',
             'action' => 'index',
         ),
-        'logs' => array(
-            'label' => __('Logs'),
-            'route' => 'admin',
-            'controller' => 'logs',
-            'action' => 'index',
-        ),
-        'tools' => array(
-            'label' => __('Tools'),
-            'route' => 'admin',
-            'controller' => 'tools',
-            'action' => 'index',
-        ),
     ),
 );

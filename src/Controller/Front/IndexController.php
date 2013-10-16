@@ -80,7 +80,7 @@ class IndexController extends ActionController
         $id = $this->params('id');
         $device = $this->params('device', 'web');
         // Check id and device
-        if ($id) {
+        if ($id && in_array($device, array('device', 'web'))) {
             // find ads
             $item = $this->getModel('propaganda')->find($id)->toArray();
             // Update view
@@ -89,6 +89,8 @@ class IndexController extends ActionController
             Pi::service('api')->ads(array('Log', 'Click'), $item['id'], $device);
             // redirect
             return $this->redirect()->toUrl($item['url']);
+        } else {
+            return $this->redirect()->toRoute('home');
         }
     }	
 }	
