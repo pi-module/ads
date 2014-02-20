@@ -8,24 +8,17 @@
  */
 
 /**
- * Module meta
- *
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
 
 namespace Module\Ads\Route;
 
 use Pi\Mvc\Router\Http\Standard;
-use Zend\Mvc\Router\Http\RouteMatch;
-use Zend\Stdlib\RequestInterface as Request;
 
 class Ads extends Standard
 {
-//protected $prefix = '/ads';
-
     /**
      * Default values.
-     *
      * @var array
      */
     protected $defaults = array(
@@ -35,34 +28,27 @@ class Ads extends Standard
     );
 
     /**
-     * match(): defined by Route interface.
-     *
-     * @see    Route::match()
-     * @param  Request $request
-     * @return RouteMatch
+     * {@inheritDoc}
      */
-    public function match(Request $request, $pathOffset = null)
+    protected $structureDelimiter = '/';
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function parse($path)
     {
-        $result = $this->canonizePath($request, $pathOffset);
-        if (null === $result) {
-            return null;
-        }
-        list($path, $pathLength) = $result;
-        if (empty($path)) {
-            return null;
-        }
-
-        $url = explode($this->paramDelimiter, $path, 3);
-
         $matches = array();
-        $matches['action'] = $url[0];
-        if (isset($url[1]) && !empty($url[1])) {
-            $matches['id'] = intval($url[1]);
+        $parts = array_filter(explode($this->structureDelimiter, $path));
+        // Set controller
+        $matches = array_merge($this->defaults, $matches);
+        $matches['action'] = (in_array($parts[0], array('view', 'click'))) ? $parts[0] : 'click';
+        if (isset($parts[1]) && !empty($parts[1])) {
+            $matches['id'] = intval($parts[1]);
         }
-        if (isset($url[2]) && !empty($url[2])) {
-            $matches['device'] = (in_array($url[2], array('web', 'mobile'))) ? $url[2] : 'web';
+        if (isset($parts[2]) && !empty($parts[2])) {
+            $matches['device'] = (in_array($parts[2], array('web', 'mobile'))) ? $parts[2] : 'web';
         }
-        return new RouteMatch(array_merge($this->defaults, $matches), $pathLength);
+        return $matches;
     }
 
     /**
@@ -71,28 +57,40 @@ class Ads extends Standard
      * @see    Route::assemble()
      * @param  array $params
      * @param  array $options
-     * @return mixed
+     * @return string
      */
-    public function assemble(array $params = array(), array $options = array())
-    {
+    public function assemble(
+        array $params = array(),
+        array $options = array()
+    ) {
         $mergedParams = array_merge($this->defaults, $params);
         if (!$mergedParams) {
             return $this->prefix;
         }
-
+        
         if (!empty($mergedParams['module'])) {
             $url['module'] = $mergedParams['module'];
         }
-        if (!empty($mergedParams['controller']) && $mergedParams['controller'] != 'index') {
+
+        if (!empty($mergedParams['controller']) 
+            && $mergedParams['controller'] != 'index') 
+        {
             $url['controller'] = $mergedParams['controller'];
         }
-        if (!empty($mergedParams['action']) && $mergedParams['action'] != 'index') {
+
+        if (!empty($mergedParams['action']) 
+            && in_array($mergedParams['action'], array('view', 'click'))) 
+        {
             $url['action'] = $mergedParams['action'];
         }
+
         if (!empty($mergedParams['id'])) {
-            $url['id'] = $mergedParams['id'];
+            $url['id'] = intval($mergedParams['id']);
         }
-        if (!empty($mergedParams['device']) && in_array($mergedParams['device'], array('web', 'mobile'))) {
+
+        if (!empty($mergedParams['device']) 
+            && in_array($mergedParams['device'], array('web', 'mobile'))) 
+        {
             $url['device'] = $mergedParams['device'];
         }
 
@@ -103,4 +101,4 @@ class Ads extends Standard
         }
         return $this->paramDelimiter . $url;
     }
-}	
+}

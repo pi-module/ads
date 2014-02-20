@@ -8,10 +8,8 @@
  */
 
 /**
- * Module meta
- *
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
- */ 
+ */
 
 namespace Module\Ads\Form;
 
@@ -59,7 +57,6 @@ class MobileForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // url
@@ -71,7 +68,6 @@ class MobileForm extends BaseForm
             'attributes' => array(
                 'type' => 'url',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // image_mobile_1
@@ -83,7 +79,6 @@ class MobileForm extends BaseForm
             'attributes' => array(
                 'type' => 'url',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // image_mobile_2
@@ -95,7 +90,6 @@ class MobileForm extends BaseForm
             'attributes' => array(
                 'type' => 'url',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // image_mobile_3
@@ -107,7 +101,6 @@ class MobileForm extends BaseForm
             'attributes' => array(
                 'type' => 'url',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // time_publish

@@ -27,5 +27,17 @@ return array(
             'controller' => 'category',
             'action' => 'index',
         ),
+        'view' => array(
+            'label' => __('View log'),
+            'route' => 'admin',
+            'controller' => 'log',
+            'action' => 'view',
+        ),
+        'click' => array(
+            'label' => __('Click log'),
+            'route' => 'admin',
+            'controller' => 'log',
+            'action' => 'click',
+        ),
     ),
 );

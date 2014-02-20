@@ -42,21 +42,27 @@ class IndexController extends ActionController
                 $where = array('device' => 'mobile', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time());
                 // Get random ads for mobile
                 $select = $this->getModel('propaganda')->select()->where($where)->order($order)->limit(1);
-                $row = $this->getModel('propaganda')->selectWith($select)->toArray();
-                $ads = array(
-                    'id' => $row[0]['id'],
-                    'image_1' => $row[0]['image_mobile_1'],
-                    'image_2' => $row[0]['image_mobile_2'],
-                    'image_3' => $row[0]['image_mobile_3'],
-                    'back_url' => Pi::url($this->url('.ads', array('controller' => 'index', 
-                                                                   'action' => 'click', 
-                                                                   'id' => $row[0]['id'], 
-                                                                   'device' => 'mobile'))),
-                );
-                // Update view
-                $this->getModel('propaganda')->update(array('view' => $row[0]['view'] + 1), array('id' => $row[0]['id']));
-                // Save log
-                Pi::service('api')->ads(array('Log', 'View'), $row[0]['id'], 'mobile');
+                $row = $this->getModel('propaganda')->selectWith($select)->current()->toArray();
+                if (isset($row)) {
+                    $ads = array(
+                        'id' => $row['id'],
+                        'image_1' => $row['image_mobile_1'],
+                        'image_2' => $row['image_mobile_2'],
+                        'image_3' => $row['image_mobile_3'],
+                        'back_url' => Pi::url($this->url('ads', array(
+                            'controller' => 'index', 
+                            'action' => 'click', 
+                            'id' => $row['id'], 
+                            'device' => 'mobile'))),
+                    );
+                    echo $ads['back_url'];
+                    // Update view
+                    $this->getModel('propaganda')->update(array('view' => $row['view'] + 1), array('id' => $row['id']));
+                    // Save log
+                    Pi::api('log', 'ads')->view($row['id'], 'mobile');
+                } else {
+                    $ads = array();
+                }
                 break;
         }
         // Set output
@@ -80,13 +86,13 @@ class IndexController extends ActionController
         $id = $this->params('id');
         $device = $this->params('device', 'web');
         // Check id and device
-        if ($id && in_array($device, array('device', 'web'))) {
+        if ($id && in_array($device, array('mobile', 'web'))) {
             // find ads
             $item = $this->getModel('propaganda')->find($id)->toArray();
             // Update view
             $this->getModel('propaganda')->update(array('click' => $item['click'] + 1), array('id' => $item['id']));
             // Save log
-            Pi::service('api')->ads(array('Log', 'Click'), $item['id'], $device);
+            Pi::api('log', 'ads')->click($item['id'], $device);
             // redirect
             return $this->redirect()->toUrl($item['url']);
         } else {

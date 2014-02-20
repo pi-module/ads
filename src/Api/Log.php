@@ -16,11 +16,11 @@
 namespace Module\Ads\Api;
 
 use Pi;
-use Pi\Application\AbstractApi;
+use Pi\Application\Api\AbstractApi;
 
 /*
- * Pi::service('api')->ads(array('Log', 'View'), $propaganda, $device);
- * Pi::service('api')->ads(array('Log', 'Click'), $propaganda, $device);
+ * Pi::api('log', 'ads')->view($propaganda, $device);
+ * Pi::api('log', 'ads')->click($propaganda, $device);
  */
 class Log extends AbstractApi
 {
@@ -33,8 +33,8 @@ class Log extends AbstractApi
         $row->propaganda = $propaganda;
         $row->device = $device;
         $row->time_create = time();
-        $row->user = Pi::registry('user')->id;
-        $row->hostname = getenv('REMOTE_ADDR');
+        $row->uid = Pi::user()->getId();
+        $row->ip = Pi::user()->getIp();
         $row->save();
     }
     
@@ -47,8 +47,8 @@ class Log extends AbstractApi
         $row->propaganda = $propaganda;
         $row->device = $device;
         $row->time_create = time();
-        $row->user = Pi::registry('user')->id;
-        $row->hostname = getenv('REMOTE_ADDR');
+        $row->uid = Pi::user()->getId();
+        $row->ip = Pi::user()->getIp();
         $row->save();
     }
 }	

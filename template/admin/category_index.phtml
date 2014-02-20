@@ -1,6 +1,6 @@
 <div class="ads">
 	<p>
-	   <a class="btn" title="<?php _e('New Category'); ?>" href="<?php echo $this->url('', array('action' => 'update')); ?>"><i class="icon-file"></i> <?php _e('New Category'); ?></a>
+	   <a class="btn btn-primary" title="<?php _e('New Category'); ?>" href="<?php echo $this->url('', array('action' => 'update')); ?>"><i class="fa fa-file"></i> <?php _e('New Category'); ?></a>
 	</p>
 	<?php if (!empty($list)) { ?>
 	<h3><?php _e('List of active ads for web'); ?></h3>
@@ -16,10 +16,10 @@
 			<td><?php echo $this->escape($item['id']); ?></td>
 			<td><?php echo $this->escape($item['title']); ?></td>
 			<td>
-				<span class="label label-info"> Height : <?php echo $this->escape($item['height']); ?></span>
-				<span class="label label-info"> Width : <?php echo $this->escape($item['width']); ?></span>
+				<span class="label label-primary"><?php _e('Height'); ?> : <?php echo $this->escape($item['height']); ?></span>
+				<span class="label label-primary"><?php _e('Width'); ?> : <?php echo $this->escape($item['width']); ?></span>
 			</td>
-			<td><a class="btn" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array('action' => 'update', 'id' => $item['id'])); ?>"><i class="icon-edit"></i> <?php _e('Edit'); ?></a></td>
+			<td><a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array('action' => 'update', 'id' => $item['id'])); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a></td>
 		</tr>
 		<?php } ?>
 	</table>	

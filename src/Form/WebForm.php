@@ -8,10 +8,8 @@
  */
 
 /**
- * Module meta
- *
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
- */ 
+ */
 
 namespace Module\Ads\Form;
 
@@ -38,7 +36,6 @@ class WebForm extends BaseForm
         // id
         $this->add(array(
             'name' => 'id',
-            
             'attributes' => array(
                 'type' => 'hidden',
             ),
@@ -60,7 +57,6 @@ class WebForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // url
@@ -72,7 +68,6 @@ class WebForm extends BaseForm
             'attributes' => array(
                 'type' => 'url',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // image_web
@@ -84,7 +79,6 @@ class WebForm extends BaseForm
             'attributes' => array(
                 'type' => 'url',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // category

@@ -8,23 +8,19 @@
  */
 
 /**
- * Module meta
- *
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
 return array(
-    // route name
-    'ads'  => array(
-        'section'   => 'front',
-        'priority'  => 10,
-
-        'type'      => 'Module\Ads\Route\Ads',
-        'options'   => array(
-            'route'     => '/ads',
-            'defaults'  => array(
-                'module'        => 'ads',
-                'controller'    => 'index',
-                'action'        => 'index'
+    // route ads
+    'ads' => array(
+        'name'    => 'ads',
+        'type'    => 'Module\Ads\Route\Ads',
+        'options' => array(
+            'route'    => '/ads',
+            'defaults' => array(
+                'module'     => 'ads',
+                'controller' => 'index',
+                'action'     => 'index'
             )
         ),
     )

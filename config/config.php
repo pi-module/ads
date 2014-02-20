@@ -14,12 +14,25 @@
 return array(
     'category' => array(
         array(
+            'title' => __('Admin'),
+            'name' => 'admin'
+        ),
+        array(
             'title' => __('Mobile'),
             'name' => 'mobile'
         ),
 
     ),
     'item' => array(
+        // Admin
+        'admin_perpage' => array(
+            'category' => 'admin',
+            'title' => __('Perpage'),
+            'description' => '',
+            'edit' => 'text',
+            'filter' => 'number_int',
+            'value' => 50
+        ),
         // Show
         'mobile_ads_type' => array(
             'title' => __('Ads type'),
@@ -36,7 +49,7 @@ return array(
             ),
             'filter' => 'string',
             'value' => 0,
-            'category' => 'show',
+            'category' => 'mobile',
         ),
     ),
 );        

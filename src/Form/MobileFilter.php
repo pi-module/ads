@@ -8,10 +8,8 @@
  */
 
 /**
- * Module meta
- *
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
- */ 
+ */
 
 namespace Module\Ads\Form;
 

@@ -8,8 +8,6 @@
  */
 
 /**
- * Module meta
- *
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
 return array(
@@ -17,7 +15,7 @@ return array(
     'random' => array(
         'title' => __('Random ads'),
         'description' => '',
-        'render' => array('block', 'random'),
+        'render' => 'block::random',
         'template' => 'random',
         'config' => array(
             'category' => array(
@@ -31,9 +29,9 @@ return array(
     ),
     // Select block
     'select' => array(
-        'title' => __('Select ads'),
+        'title' => __('Selected ads'),
         'description' => '',
-        'render' => array('block', 'select'),
+        'render' => 'block::select',
         'template' => 'select',
         'config' => array(
             'propaganda' => array(

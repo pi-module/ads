@@ -8,8 +8,6 @@
  */
 
 /**
- * Module meta
- *
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
 
@@ -22,7 +20,9 @@ use Module\Ads\Form\CategoryFilter;
 
 class CategoryController extends ActionController
 {
-    protected $categoryColumns = array('id', 'title', 'height', 'width');
+    protected $categoryColumns = array(
+        'id', 'title', 'height', 'width'
+    );
  
     public function indexAction()
     {
@@ -63,26 +63,20 @@ class CategoryController extends ActionController
                 }
                 $row->assign($values);
                 $row->save();
-
+                // jump
                 $message = __('Category data saved successfully.');
                 $url = array('action' => 'index');
                 $this->jump($url, $message);
-            } else {
-                $message = __('Invalid data, please check and re-submit.');
             }
         } else {
             if ($id) {
                 $values = $this->getModel('category')->find($id)->toArray();
                 $form->setData($values);
-                $message = 'You can edit this category';
-            } else {
-                $message = 'You can add new category for web';
-            }    
+            }   
         }    
         // Set view
         $this->view()->setTemplate('category_add');
         $this->view()->assign('form', $form);
         $this->view()->assign('title', __('Add a Category'));
-        $this->view()->assign('message', $message);
     }
 }

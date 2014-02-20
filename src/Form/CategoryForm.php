@@ -8,10 +8,8 @@
  */
 
 /**
- * Module meta
- *
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
- */ 
+ */
 
 namespace Module\Ads\Form;
 
@@ -38,7 +36,6 @@ class CategoryForm extends BaseForm
         // id
         $this->add(array(
             'name' => 'id',
-            
             'attributes' => array(
                 'type' => 'hidden',
             ),
@@ -52,7 +49,6 @@ class CategoryForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // height
@@ -64,7 +60,6 @@ class CategoryForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // width
@@ -76,7 +71,6 @@ class CategoryForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'description' => '',
-                'class' => 'span6',
             )
         ));
         // Save
