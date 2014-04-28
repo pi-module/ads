@@ -45,7 +45,7 @@ class IndexController extends ActionController
             case '2':
                 // Set info
                 $ads = array();
-                $order = array(new \Zend\Db\Sql\Predicate\Expression('RAND()'));
+                $order = array(new Expression('RAND()'));
                 $where = array('device' => 'mobile', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time());
                 // Get random ads for mobile
                 $select = $this->getModel('propaganda')->select()->where($where)->order($order)->limit(1);
