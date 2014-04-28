@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pi\n"
+"POT-Creation-Date: 2014-04-28 10:20+0330\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Pi\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _a;_t\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /var/www/html/local/pi/pi-release-2.4.0/usr/module/"
+"ads\n"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:17
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:19
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:17
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:16
+msgid "Ads"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:23
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:29
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:22
+msgid "Category"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:29
+msgid "Log"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:39
+msgid "View log"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:49
+msgid "Click log"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:27
+msgid "Logs"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:16
+msgid "Random ads"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:22
+msgid "Number"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:29
+msgid "Select category"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:39
+msgid "Selected ads"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:45
+msgid "Select ads"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:17
+msgid "For generate ads"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:17
+msgid "Admin"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:21
+msgid "Mobile"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:38
+msgid "Ads type"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:44
+msgid "Off - Dont show ads on mobile aplication"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:45
+msgid "Online - Use online ads service"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:46
+msgid "Module - Use ads module"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:47
+msgid "Random - Select random between Online and module"
+msgstr ""

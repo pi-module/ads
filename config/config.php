@@ -10,15 +10,14 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
-
 return array(
     'category' => array(
         array(
-            'title' => __('Admin'),
+            'title' => _a('Admin'),
             'name' => 'admin'
         ),
         array(
-            'title' => __('Mobile'),
+            'title' => _a('Mobile'),
             'name' => 'mobile'
         ),
 
@@ -27,7 +26,7 @@ return array(
         // Admin
         'admin_perpage' => array(
             'category' => 'admin',
-            'title' => __('Perpage'),
+            'title' => _a('Perpage'),
             'description' => '',
             'edit' => 'text',
             'filter' => 'number_int',
@@ -35,15 +34,16 @@ return array(
         ),
         // Show
         'mobile_ads_type' => array(
-            'title' => __('Ads type'),
+            'title' => _a('Ads type'),
             'description' => ' ',
             'edit' => array(
                 'type' => 'select',
                 'options' => array(
                     'options' => array(
-                        0 => __('Off - Dont show ads on mobile aplication'),
-                        1 => __('Online - Use online ads service'),
-                        2 => __('Module - Use ads module'),
+                        0 => _a('Off - Dont show ads on mobile aplication'),
+                        1 => _a('Online - Use online ads service'),
+                        2 => _a('Module - Use ads module'),
+                        3 => _a('Random - Select random between Online and module'),
                     ),
                 ),
             ),

@@ -1,0 +1,240 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pi\n"
+"POT-Creation-Date: 2014-04-28 10:19+0330\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Pi\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _a;_t\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /var/www/html/local/pi/pi-release-2.4.0/usr/module/"
+"ads\n"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:17
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:19
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:17
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:16
+msgid "Ads"
+msgstr "تبلیغات"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:23
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:29
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:22
+msgid "Category"
+msgstr "شاخه"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:29
+msgid "Log"
+msgstr "گزارش"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:39
+msgid "View log"
+msgstr "گزارش نمایش"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:49
+msgid "Click log"
+msgstr "گزارش کلیک"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:27
+msgid "Logs"
+msgstr "گزارش ها"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:16
+msgid "Random ads"
+msgstr "تبلیغات تصادفی"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:22
+msgid "Number"
+msgstr "تعداد"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:29
+msgid "Select category"
+msgstr "انتخاب شاخه"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:39
+msgid "Selected ads"
+msgstr "تبلیغ انتخاب شده"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:45
+msgid "Select ads"
+msgstr "انتخاب تبلیغ"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:17
+msgid "For generate ads"
+msgstr "برای ایجاد سیستم تبلیغ"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:17
+msgid "Admin"
+msgstr "مدیریت"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:21
+msgid "Mobile"
+msgstr "موبایل"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:38
+msgid "Ads type"
+msgstr "نوع تبلیغ"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:44
+msgid "Off - Dont show ads on mobile aplication"
+msgstr "خاموش - هیچ تبلیغی در سمت موبایل نمایش داده نشود"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:45
+msgid "Online - Use online ads service"
+msgstr "آنلاین - استفاده از سیستم های آنلاین تبلیغ مثل گوگل ادز"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:46
+msgid "Module - Use ads module"
+msgstr "ماژول - استفاده از ماژول تبلیغ"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:47
+msgid "Random - Select random between Online and module"
+msgstr "تصادفی - انتخاب تصادفی بین حالت ماژول و آنلاین"
+
+#~ msgid "Title"
+#~ msgstr "عنوان"
+
+#~ msgid "Url"
+#~ msgstr "آدرس"
+
+#~ msgid "Image 1"
+#~ msgstr "تصویر ۱"
+
+#~ msgid "Image 2"
+#~ msgstr "تصویر ۲"
+
+#~ msgid "Image 3"
+#~ msgstr "تصویر ۳"
+
+#~ msgid "Publish time"
+#~ msgstr "تاریخ انتشار"
+
+#~ msgid "Expire time"
+#~ msgstr "تاریخ پایان"
+
+#~ msgid "Status"
+#~ msgstr "وضعیت"
+
+#~ msgid "Published"
+#~ msgstr "منتشر شده"
+
+#~ msgid "Pending review"
+#~ msgstr "در حال بررسی"
+
+#~ msgid "Draft"
+#~ msgstr "پیش نویس"
+
+#~ msgid "Private"
+#~ msgstr "خصوصی"
+
+#~ msgid "Submit"
+#~ msgstr "ارسال"
+
+#~ msgid "Image"
+#~ msgstr "تصویر"
+
+#~ msgid "Height"
+#~ msgstr "ارتفاع"
+
+#~ msgid "Width"
+#~ msgstr "عرض"
+
+#~ msgid "Ads data saved successfully."
+#~ msgstr "اطلاعات تبلیغ با موفقیت ذخیره شد"
+
+#~ msgid "Ads for show on website front"
+#~ msgstr "درج تبلیغ جدید برای نمایش در بخش کاربر وب سایت"
+
+#~ msgid "Add a Ads for web"
+#~ msgstr "تبلیغ جدید برای وب"
+
+#~ msgid ""
+#~ "Ads for send from website to mobile app, it send JSON array than included "
+#~ "type and ad info, you can set 0 1 or 2 for type on module setting and on "
+#~ "you add you can set if type is 2 show website app or use online service "
+#~ "by set it to 1 or set 0 for off ads system on mobile. you can use this "
+#~ "link for set on mobile app : %s"
+#~ msgstr ""
+#~ "تبلیغات برای ارسال به نرم افزار موبایل، این سیستم یک خروجی JSON آماده "
+#~ "کرده و برای نرم افزار موبایل ارسال می کند. این خروجی شامل دو پارامتر نوع "
+#~ "و اطلاعات تبلیغ است. شما میتوانید نوع ارسال را از بخش ویژگی های ماژول "
+#~ "تغییر دهید. در انتها با استفاده از لینک زیر اطلاعات را برای نرم افزار "
+#~ "موبایل ارسال کنید : %s"
+
+#~ msgid "Add a Ads for mobile"
+#~ msgstr "تبلیغ جدید برای موبایل"
+
+#~ msgid "Category data saved successfully."
+#~ msgstr "اطلاعات شاخه با موفقیت ذخیره شد"
+
+#~ msgid "Add a Category"
+#~ msgstr "شاخه جدید"
+
+#~ msgid "Perpage"
+#~ msgstr "تعداد در هر صفحه"
+
+#~ msgid "New Category"
+#~ msgstr "شاخه جدید"
+
+#~ msgid "List of active ads for web"
+#~ msgstr "فهرست تبلیغات فعال برای وب سایت"
+
+#~ msgid "ID"
+#~ msgstr "شناسه"
+
+#~ msgid "Information"
+#~ msgstr "اطلاعات"
+
+#~ msgid "Action"
+#~ msgstr "عنلکرد"
+
+#~ msgid "Edit"
+#~ msgstr "ویرایش"
+
+#~ msgid "Ads click logs"
+#~ msgstr "گزارش کلیک بر روی تبلیغات"
+
+#~ msgid "Device"
+#~ msgstr "دستگاه"
+
+#~ msgid "User"
+#~ msgstr "کاربر"
+
+#~ msgid "Ip"
+#~ msgstr "آی پی"
+
+#~ msgid "Time"
+#~ msgstr "زمان"
+
+#~ msgid "New ads for web"
+#~ msgstr "تبلیغات جدید وب"
+
+#~ msgid "New ads for mobile"
+#~ msgstr "تبلیغات جدید موبایل"
+
+#~ msgid "View"
+#~ msgstr "نمایش"
+
+#~ msgid "Click"
+#~ msgstr "کلیک"
+
+#~ msgid "List of active ads for mobile"
+#~ msgstr "فهرست تبیلغات فعال برای نرم افزار موبایل"
+
+#~ msgid "List of nonpublish ads"
+#~ msgstr "فهرست تبلیغات منتشر نشده"
+
+#~ msgid "List of expire ads"
+#~ msgstr "فهرست تبلیغات پایان یافته"
+
+#~ msgid "List of offline ads"
+#~ msgstr "فهرست تبلیغات غیر فعال"
+
+#~ msgid "Ads view logs"
+#~ msgstr "گزارش نمایش تبلیغات"

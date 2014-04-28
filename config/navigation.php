@@ -8,36 +8,49 @@
  */
 
 /**
- * Module meta
- *
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
-
 return array(
     'admin' => array(
         'index' => array(
-            'label' => __('Ads'),
-            'route' => 'admin',
-            'controller' => 'index',
-            'action' => 'index',
+            'label'         => _a('Ads'),
+            'permission'    => array(
+                'resource'  => 'index',
+            ),
+            'route'         => 'admin',
+            'module'        => 'ads',
+            'controller'    => 'index',
+            'action'        => 'index',
         ),
         'category' => array(
-            'label' => __('Category'),
-            'route' => 'admin',
-            'controller' => 'category',
-            'action' => 'index',
+            'label'         => _a('Category'),
+            'permission'    => array(
+                'resource'  => 'category',
+            ),
+            'route'         => 'admin',
+            'module'        => 'ads',
+            'controller'    => 'category',
+            'action'        => 'index',
         ),
         'view' => array(
-            'label' => __('View log'),
-            'route' => 'admin',
-            'controller' => 'log',
-            'action' => 'view',
+            'label'         => _a('View log'),
+            'permission'    => array(
+                'resource'  => 'log',
+            ),
+            'route'         => 'admin',
+            'module'        => 'ads',
+            'controller'    => 'log',
+            'action'        => 'view',
         ),
         'click' => array(
-            'label' => __('Click log'),
-            'route' => 'admin',
-            'controller' => 'log',
-            'action' => 'click',
+            'label'         => _a('Click log'),
+            'permission'    => array(
+                'resource'  => 'log',
+            ),
+            'route'         => 'admin',
+            'module'        => 'ads',
+            'controller'    => 'log',
+            'action'        => 'click',
         ),
     ),
 );

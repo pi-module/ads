@@ -25,25 +25,27 @@ class Block
         $block = array_merge($block, $options);
         // Set info
         $order = array(new Expression('RAND()'));
-        $where = array('category' => intval($block['category']), 'status' => 1, 'device' => 'web', 'time_publish < ?' => time(), 'time_expire > ?' => time());
+        $limit = intval($block['number']);
+        $where = array('category' => $block['category'], 'status' => 1, 'device' => 'web', 'time_publish < ?' => time(), 'time_expire > ?' => time());
         // Get random ads for mobile
-        $select = Pi::model('propaganda', $module)->select()->where($where)->order($order)->limit(1);
-        $row = Pi::model('propaganda', $module)->selectWith($select)->current()->toArray();
-        if (!empty($row)) {
+        $select = Pi::model('propaganda', $module)->select()->where($where)->order($order)->limit($limit);
+        $rowset = Pi::model('propaganda', $module)->selectWith($select);
+        // Make list
+        foreach ($rowset as $row) {
             // Make ads array
-            $ads['title'] = $row['title'];
-            $ads['image_url'] = $row['image_web'];
-            $ads['back_url'] = Pi::url(Pi::service('url')->assemble('ads', array(
+            $ads[$row->id]['title'] = $row->title;
+            $ads[$row->id]['image_url'] = $row->image_web;
+            $ads[$row->id]['back_url'] = Pi::url(Pi::service('url')->assemble('ads', array(
                 'module'        => $module,
                 'controller'    => 'index',
                 'action'        => 'click',
-                'id'            => $row['id'],
-                'device'        => $row['device'],
+                'id'            => $row->id,
+                'device'        => $row->device,
             )));
             // Update view
-            Pi::model('propaganda', $module)->update(array('view' => $row['view'] + 1), array('id' => $row['id']));
+            Pi::model('propaganda', $module)->increment('view', array('id' => $row->id));
             // Save log
-            Pi::api('log', 'ads')->view($row['id'], 'web');
+            Pi::api('log', 'ads')->view($row->id, 'web');
         }
         // Set block array
         $block['resources'] = $ads;
@@ -57,8 +59,8 @@ class Block
         $block = array();
         $block = array_merge($block, $options);
         // find ads
-        if (!empty(intval($block['propaganda']))) {
-            $row = Pi::model('propaganda', $module)->find(intval($block['propaganda']))->toArray();
+        if (!empty($block['propaganda'])) {
+            $row = Pi::model('propaganda', $module)->find($block['propaganda'])->toArray();
             if (!empty($row) && 
                 $row['device'] == 'web' && 
                 $row['status'] == 1 && 
@@ -76,7 +78,7 @@ class Block
                     'device'        => $row['device'],
                 )));
                 // Update view
-                Pi::model('propaganda', $module)->update(array('view' => $row['view'] + 1), array('id' => $row['id']));
+                Pi::model('propaganda', $module)->increment('view', array('id' => $row->id));
                 // Save log
                 Pi::api('log', 'ads')->view($row['id'], 'web');
             }

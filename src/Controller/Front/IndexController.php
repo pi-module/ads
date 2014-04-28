@@ -15,6 +15,7 @@ namespace Module\Ads\Controller\Front;
 use Pi;
 use Pi\Mvc\Controller\ActionController;
 use Zend\Json\Json;
+use Zend\Db\Sql\Expression;
 
 class IndexController extends ActionController
 {
@@ -27,6 +28,11 @@ class IndexController extends ActionController
         $this->view()->setTemplate(false)->setLayout('layout-content');
         // Get ads and make output
         $type = $this->config('mobile_ads_type');
+        // Set when type is 3
+        if ($type == 3) {
+            $type = rand(1,2);
+        }
+        // Make action
         switch ($type) {
             case '0':
                 $ads = array();
@@ -38,26 +44,27 @@ class IndexController extends ActionController
 
             case '2':
                 // Set info
+                $ads = array();
                 $order = array(new \Zend\Db\Sql\Predicate\Expression('RAND()'));
                 $where = array('device' => 'mobile', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time());
                 // Get random ads for mobile
                 $select = $this->getModel('propaganda')->select()->where($where)->order($order)->limit(1);
-                $row = $this->getModel('propaganda')->selectWith($select)->current()->toArray();
-                if (isset($row)) {
+                $row = $this->getModel('propaganda')->selectWith($select)->current();
+                if (!empty($row)) {
+                    $row = $row->toArray();
                     $ads = array(
                         'id' => $row['id'],
                         'image_1' => $row['image_mobile_1'],
                         'image_2' => $row['image_mobile_2'],
                         'image_3' => $row['image_mobile_3'],
                         'back_url' => Pi::url($this->url('ads', array(
-                            'controller' => 'index', 
-                            'action' => 'click', 
-                            'id' => $row['id'], 
-                            'device' => 'mobile'))),
+                            'controller'  => 'index', 
+                            'action'      => 'click', 
+                            'id'          => $row['id'], 
+                            'device'      => 'mobile'))),
                     );
-                    echo $ads['back_url'];
                     // Update view
-                    $this->getModel('propaganda')->update(array('view' => $row['view'] + 1), array('id' => $row['id']));
+                    $this->getModel('propaganda')->increment('view', array('id' => $row['id']));
                     // Save log
                     Pi::api('log', 'ads')->view($row['id'], 'mobile');
                 } else {
@@ -90,7 +97,7 @@ class IndexController extends ActionController
             // find ads
             $item = $this->getModel('propaganda')->find($id)->toArray();
             // Update view
-            $this->getModel('propaganda')->update(array('click' => $item['click'] + 1), array('id' => $item['id']));
+            $this->getModel('propaganda')->increment('click', array('id' => $item['id']));
             // Save log
             Pi::api('log', 'ads')->click($item['id'], $device);
             // redirect

@@ -95,6 +95,16 @@ class IndexController extends ActionController
 
     public function webAction()
     {
+        // check category
+        $columns = array('count' => new \Zend\Db\Sql\Predicate\Expression('count(*)'));
+        $select = Pi::model('category', $this->getModule())->select()->columns($columns);
+        $categoryCount = Pi::model('category', $this->getModule())->selectWith($select)->current()->count;
+        if (!$categoryCount) {
+            return $this->redirect()->toRoute('', array(
+                'controller' => 'category',
+                'action' => 'update'
+            ));
+        }
         // Get id
         $id = $this->params('id');
         // Set form

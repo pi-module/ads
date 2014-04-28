@@ -14,14 +14,17 @@ return array(
     // Admin section
     'admin' => array(
         array(
+            'title'         => _a('Ads'),
             'controller'    => 'index',
             'permission'    => 'index',
         ),
         array(
+            'title'         => _a('Category'),
             'controller'    => 'category',
             'permission'    => 'category',
         ),
         array(
+            'title'         => _a('Logs'),
             'controller'    => 'log',
             'permission'    => 'log',
         ),

@@ -13,20 +13,20 @@
 return array(
     // Admin section
     'admin' => array(
-        'index'       => array(
-            'title'         => __('Ads'),
+        'index'            => array(
+            'title'         => _a('Ads'),
             'access'        => array(
                 //'admin',
             ),
         ),
         'category'       => array(
-            'title'         => __('Category'),
+            'title'         => _a('Category'),
             'access'        => array(
                 //'admin',
             ),
         ),
-        'log'       => array(
-            'title'         => __('Log'),
+        'log'            => array(
+            'title'         => _a('Log'),
             'access'        => array(
                 //'admin',
             ),

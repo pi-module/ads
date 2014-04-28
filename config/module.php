@@ -13,9 +13,9 @@
 return array(
     // Module meta
     'meta'         => array(
-        'title'         => __('Ads'),
-        'description'   => __('For generate ads'),
-        'version'       => '1.1.0',
+        'title'         => _a('Ads'),
+        'description'   => _a('For generate ads'),
+        'version'       => '1.2.0',
         'license'       => 'New BSD',
         'logo'          => 'image/logo.png',
         'readme'        => 'docs/readme.txt',
