@@ -197,7 +197,7 @@ class IndexController extends ActionController
             }
         } else {
             if ($id) {
-                $values = $this->getModel('propaganda')->find($values['id'])->toArray();
+                $values = $this->getModel('propaganda')->find($id)->toArray();
                 $values['time_publish'] = date('Y-m-d', $values['time_publish']);
                 $values['time_expire'] = date('Y-m-d', $values['time_expire']);
                 $form->setData($values);
