@@ -30,7 +30,89 @@ class IndexController extends ActionController
         $type = $this->config('mobile_ads_type');
         // Set when type is 3
         if ($type == 3) {
-            $type = rand(1,2);
+            switch ($this->config('mobile_random')) {
+                case '1-9':
+                    $number = rand(1,10);
+                    if ($number == 2) {
+                        $type = 2;
+                    } else {
+                        $type = 1;
+                    }
+                    break;
+
+                case '2-8':
+                    $number = rand(1,5);
+                    if ($number == 2) {
+                        $type = 2;
+                    } else {
+                        $type = 1;
+                    }
+                    break;
+
+                case '3-7':
+                    $number = rand(1,4);
+                    if ($number == 2) {
+                        $type = 2;
+                    } else {
+                        $type = 1;
+                    }
+                    break;
+
+                case '4-6':
+                    $number = rand(1,3);
+                    if ($number == 2) {
+                        $type = 2;
+                    } else {
+                        $type = 1;
+                    }
+                    break;
+
+                default
+                case '5-5':
+                    $number = rand(1,2);
+                    if ($number == 2) {
+                        $type = 2;
+                    } else {
+                        $type = 1;
+                    }
+                    break;
+
+                case '6-4':
+                    $number = rand(1,3);
+                    if ($number == 1) {
+                        $type = 1;
+                    } else {
+                        $type = 2;
+                    }
+                    break;
+
+                case '7-3':
+                    $number = rand(1,4);
+                    if ($number == 1) {
+                        $type = 1;
+                    } else {
+                        $type = 2;
+                    }
+                    break;
+
+                case '8-2':
+                    $number = rand(1,5);
+                    if ($number == 1) {
+                        $type = 1;
+                    } else {
+                        $type = 2;
+                    }
+                    break;
+
+                case '9-1':
+                    $number = rand(1,10);
+                    if ($number == 1) {
+                        $type = 1;
+                    } else {
+                        $type = 2;
+                    }
+                    break;
+            }
         }
         // Make action
         switch ($type) {
