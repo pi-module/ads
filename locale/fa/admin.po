@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi\n"
-"POT-Creation-Date: 2014-04-28 10:19+0330\n"
+"POT-Creation-Date: 2014-10-19 14:15+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -15,35 +15,6 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: /var/www/html/local/pi/pi-release-2.4.0/usr/module/"
 "ads\n"
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:17
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:19
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:17
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:16
-msgid "Ads"
-msgstr "تبلیغات"
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:23
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:29
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:22
-msgid "Category"
-msgstr "شاخه"
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:29
-msgid "Log"
-msgstr "گزارش"
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:39
-msgid "View log"
-msgstr "گزارش نمایش"
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:49
-msgid "Click log"
-msgstr "گزارش کلیک"
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:27
-msgid "Logs"
-msgstr "گزارش ها"
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:16
 msgid "Random ads"
@@ -65,37 +36,114 @@ msgstr "تبلیغ انتخاب شده"
 msgid "Select ads"
 msgstr "انتخاب تبلیغ"
 
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:17
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:16
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:16
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:17
+msgid "Ads"
+msgstr "تبلیغات"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:22
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:26
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:23
+msgid "Category"
+msgstr "شاخه"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:27
+msgid "Logs"
+msgstr "گزارش ها"
+
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:17
 msgid "For generate ads"
 msgstr "برای ایجاد سیستم تبلیغ"
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:17
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:36
+msgid "View log"
+msgstr "گزارش نمایش"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:46
+msgid "Click log"
+msgstr "گزارش کلیک"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:16
 msgid "Admin"
 msgstr "مدیریت"
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:21
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:20
 msgid "Mobile"
 msgstr "موبایل"
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:38
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:29
+msgid "Perpage"
+msgstr "تعداد در هر صفحه"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:37
 msgid "Ads type"
 msgstr "نوع تبلیغ"
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:44
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:43
 msgid "Off - Dont show ads on mobile aplication"
 msgstr "خاموش - هیچ تبلیغی در سمت موبایل نمایش داده نشود"
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:45
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:44
 msgid "Online - Use online ads service"
 msgstr "آنلاین - استفاده از سیستم های آنلاین تبلیغ مثل گوگل ادز"
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:46
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:45
 msgid "Module - Use ads module"
 msgstr "ماژول - استفاده از ماژول تبلیغ"
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:47
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:46
 msgid "Random - Select random between Online and module"
 msgstr "تصادفی - انتخاب تصادفی بین حالت ماژول و آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:55
+msgid "Percentage Show"
+msgstr "درصد نمایش"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:56
+msgid "Percentage Show ads between website and online service"
+msgstr "درصد نمایش تبلیغ بین تبلیغات وب سایت و سرویس آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:61
+msgid "10% website and 90% online"
+msgstr "۱۰٪ از وب سایت و ۹۰٪ آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:62
+msgid "20% website and 80% online"
+msgstr "۲۰٪ از وب سایت و ۸۰٪ آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:63
+msgid "30% website and 70% online"
+msgstr "۳۰٪ از وب سایت و ۷۰٪ آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:64
+msgid "40% website and 60% online"
+msgstr "۴۰٪ از وب سایت و ۶۰٪ آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:65
+msgid "50% website and 50% online"
+msgstr "۵۰٪ از وب سایت و ۵۰٪ آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:66
+msgid "60% website and 40% online"
+msgstr "۶۰٪ از وب سایت و ۴۰٪ آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:67
+msgid "70% website and 30% online"
+msgstr "۷۰٪ از وب سایت و ۳۰٪ آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:68
+msgid "80% website and 20% online"
+msgstr "۸۰٪ از وب سایت و ۲۰٪ آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:69
+msgid "90% website and 10% online"
+msgstr "۹۰٪ از وب سایت و ۱۰٪ آنلاین"
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:29
+msgid "Log"
+msgstr "گزارش"
 
 #~ msgid "Title"
 #~ msgstr "عنوان"
@@ -175,9 +223,6 @@ msgstr "تصادفی - انتخاب تصادفی بین حالت ماژول و �
 
 #~ msgid "Add a Category"
 #~ msgstr "شاخه جدید"
-
-#~ msgid "Perpage"
-#~ msgstr "تعداد در هر صفحه"
 
 #~ msgid "New Category"
 #~ msgstr "شاخه جدید"

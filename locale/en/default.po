@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi\n"
-"POT-Creation-Date: 2014-04-28 10:21+0330\n"
+"POT-Creation-Date: 2014-10-19 14:15+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -17,8 +17,8 @@ msgstr ""
 "ads\n"
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/MobileForm.php:55
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/WebForm.php:55
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/CategoryForm.php:47
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/WebForm.php:55
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:10
 msgid "Title"
 msgstr ""
@@ -86,17 +86,9 @@ msgid "Private"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/MobileForm.php:147
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/WebForm.php:137
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/CategoryForm.php:81
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/WebForm.php:137
 msgid "Submit"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/WebForm.php:77
-msgid "Image"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/WebForm.php:89
-msgid "Category"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/CategoryForm.php:58
@@ -109,31 +101,12 @@ msgstr ""
 msgid "Width"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:130
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:184
-msgid "Ads data saved successfully."
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/WebForm.php:77
+msgid "Image"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:143
-msgid "Ads for show on website front"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:146
-msgid "Add a Ads for web"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:197
-#, php-format
-msgid ""
-"Ads for send from website to mobile app, it send JSON array than included "
-"type and ad info, you can set 0 1 or 2 for type on module setting and on you "
-"add you can set if type is 2 show website app or use online service by set "
-"it to 1 or set 0 for off ads system on mobile. you can use this link for set "
-"on mobile app : %s"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:201
-msgid "Add a Ads for mobile"
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Form/WebForm.php:89
+msgid "Category"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/CategoryController.php:67
@@ -144,51 +117,114 @@ msgstr ""
 msgid "Add a Category"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:3
-msgid "New Category"
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:140
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:194
+msgid "Ads data saved successfully."
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:6
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:153
+msgid "Ads for show on website front"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:156
+msgid "Add a Ads for web"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:207
+#, php-format
+msgid ""
+"Ads for send from website to mobile app, it send JSON array than included "
+"type and ad info, you can set 0 1 or 2 for type on module setting and on you "
+"add you can set if type is 2 show website app or use online service by set "
+"it to 1 or set 0 for off ads system on mobile. you can use this link for set "
+"on mobile app : %s"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/src/Controller/Admin/IndexController.php:211
+msgid "Add a Ads for mobile"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:3
+msgid "New ads for web"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:4
+msgid "New ads for mobile"
+msgstr ""
+
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:7
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:6
 msgid "List of active ads for web"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:9
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/log_click.phtml:5
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:10
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:42
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:74
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:106
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:138
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/log_click.phtml:5
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/log_view.phtml:5
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:9
 msgid "ID"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:11
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:11
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:43
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:75
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:107
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:139
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:11
 msgid "Information"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:12
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:12
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:44
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:76
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:108
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:140
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:12
 msgid "Action"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:22
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:27
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:59
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:91
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:123
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:155
+msgid "View"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:28
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:60
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:92
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:124
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:156
+msgid "Click"
+msgstr ""
+
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:32
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:64
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:96
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:128
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:160
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:22
 msgid "Edit"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:39
+msgid "List of active ads for mobile"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:71
+msgid "List of nonpublish ads"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:103
+msgid "List of expire ads"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:135
+msgid "List of offline ads"
 msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/log_click.phtml:2
@@ -220,46 +256,10 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:3
-msgid "New ads for web"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:4
-msgid "New ads for mobile"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:27
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:59
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:91
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:123
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:155
-msgid "View"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:28
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:60
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:92
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:124
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:156
-msgid "Click"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:39
-msgid "List of active ads for mobile"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:71
-msgid "List of nonpublish ads"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:103
-msgid "List of expire ads"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/ads_index.phtml:135
-msgid "List of offline ads"
-msgstr ""
-
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/log_view.phtml:2
 msgid "Ads view logs"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/template/admin/category_index.phtml:3
+msgid "New Category"
 msgstr ""

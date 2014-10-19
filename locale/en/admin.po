@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pi\n"
-"POT-Creation-Date: 2014-04-28 10:20+0330\n"
+"POT-Creation-Date: 2014-10-19 14:14+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Pi\n"
@@ -15,35 +15,6 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: /var/www/html/local/pi/pi-release-2.4.0/usr/module/"
 "ads\n"
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:17
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:19
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:17
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:16
-msgid "Ads"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:23
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:29
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:22
-msgid "Category"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:29
-msgid "Log"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:39
-msgid "View log"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:49
-msgid "Click log"
-msgstr ""
-
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:27
-msgid "Logs"
-msgstr ""
 
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/block.php:16
 msgid "Random ads"
@@ -65,34 +36,111 @@ msgstr ""
 msgid "Select ads"
 msgstr ""
 
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:17
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:16
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:16
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:17
+msgid "Ads"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:22
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:26
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:23
+msgid "Category"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/page.php:27
+msgid "Logs"
+msgstr ""
+
 #: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/module.php:17
 msgid "For generate ads"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:17
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:36
+msgid "View log"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/navigation.php:46
+msgid "Click log"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:16
 msgid "Admin"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:21
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:20
 msgid "Mobile"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:38
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:29
+msgid "Perpage"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:37
 msgid "Ads type"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:44
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:43
 msgid "Off - Dont show ads on mobile aplication"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:45
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:44
 msgid "Online - Use online ads service"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:46
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:45
 msgid "Module - Use ads module"
 msgstr ""
 
-#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:47
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:46
 msgid "Random - Select random between Online and module"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:55
+msgid "Percentage Show"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:56
+msgid "Percentage Show ads between website and online service"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:61
+msgid "10% website and 90% online"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:62
+msgid "20% website and 80% online"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:63
+msgid "30% website and 70% online"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:64
+msgid "40% website and 60% online"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:65
+msgid "50% website and 50% online"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:66
+msgid "60% website and 40% online"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:67
+msgid "70% website and 30% online"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:68
+msgid "80% website and 20% online"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/config.php:69
+msgid "90% website and 10% online"
+msgstr ""
+
+#: /var/www/html/local/pi/pi-release-2.4.0/usr/module/ads/config/permission.php:29
+msgid "Log"
 msgstr ""

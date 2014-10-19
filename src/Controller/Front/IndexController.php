@@ -67,7 +67,7 @@ class IndexController extends ActionController
                     }
                     break;
 
-                default
+                default:
                 case '5-5':
                     $number = rand(1,2);
                     if ($number == 2) {
