@@ -182,10 +182,12 @@ class IndexController extends ActionController
             $this->getModel('propaganda')->increment('click', array('id' => $item['id']));
             // Save log
             Pi::api('log', 'ads')->click($item['id'], $device);
-            // redirect
-            return $this->redirect()->toUrl($item['url']);
+            // Set view
+            $this->view()->setTemplate('open')->setLayout('layout-content');
+            $this->view()->assign('url', $item['url']);
         } else {
+            $this->view()->setTemplate(false)->setLayout('layout-content');
             return $this->redirect()->toRoute('home');
         }
-    }	
+    }
 }	

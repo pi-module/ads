@@ -2,8 +2,8 @@
 <div class="ads-block-random clearfix">
 	<?php foreach ($block['resources'] as $resources) { ?>
 	<div class="ads-item center-block">
-		<a class="thumbnail" rel="external nofollow" target="_blank" title="<?php echo $resources['title']; ?>" href="<?php echo $resources['back_url']; ?>">
-			<img src="<?php echo $resources['image_url']; ?>" alt="<?php echo $resources['title']; ?>" />
+		<a rel="external nofollow" target="_blank" title="<?php echo $resources['title']; ?>" href="<?php echo $resources['back_url']; ?>">
+			<img class="img-responsive img-rounded" src="<?php echo $resources['image_url']; ?>" alt="<?php echo $resources['title']; ?>" />
 		</a>
 	</div>
 	<?php } ?>
