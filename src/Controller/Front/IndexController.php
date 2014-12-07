@@ -16,6 +16,7 @@ use Pi;
 use Pi\Mvc\Controller\ActionController;
 use Zend\Json\Json;
 use Zend\Db\Sql\Expression;
+use Zend\Http\Response;
 
 class IndexController extends ActionController
 {
@@ -34,36 +35,36 @@ class IndexController extends ActionController
                 case '1-9':
                     $number = rand(1,10);
                     if ($number == 2) {
-                        $type = 2;
+                        $type = '2';
                     } else {
-                        $type = 1;
+                        $type = '1';
                     }
                     break;
 
                 case '2-8':
                     $number = rand(1,5);
                     if ($number == 2) {
-                        $type = 2;
+                        $type = '2';
                     } else {
-                        $type = 1;
+                        $type = '1';
                     }
                     break;
 
                 case '3-7':
                     $number = rand(1,4);
                     if ($number == 2) {
-                        $type = 2;
+                        $type = '2';
                     } else {
-                        $type = 1;
+                        $type = '1';
                     }
                     break;
 
                 case '4-6':
                     $number = rand(1,3);
                     if ($number == 2) {
-                        $type = 2;
+                        $type = '2';
                     } else {
-                        $type = 1;
+                        $type = '1';
                     }
                     break;
 
@@ -71,45 +72,45 @@ class IndexController extends ActionController
                 case '5-5':
                     $number = rand(1,2);
                     if ($number == 2) {
-                        $type = 2;
+                        $type = '2';
                     } else {
-                        $type = 1;
+                        $type = '1';
                     }
                     break;
 
                 case '6-4':
                     $number = rand(1,3);
                     if ($number == 1) {
-                        $type = 1;
+                        $type = '1';
                     } else {
-                        $type = 2;
+                        $type = '2';
                     }
                     break;
 
                 case '7-3':
                     $number = rand(1,4);
                     if ($number == 1) {
-                        $type = 1;
+                        $type = '1';
                     } else {
-                        $type = 2;
+                        $type = '2';
                     }
                     break;
 
                 case '8-2':
                     $number = rand(1,5);
                     if ($number == 1) {
-                        $type = 1;
+                        $type = '1';
                     } else {
-                        $type = 2;
+                        $type = '2';
                     }
                     break;
 
                 case '9-1':
                     $number = rand(1,10);
                     if ($number == 1) {
-                        $type = 1;
+                        $type = '1';
                     } else {
-                        $type = 2;
+                        $type = '2';
                     }
                     break;
             }
@@ -182,12 +183,18 @@ class IndexController extends ActionController
             $this->getModel('propaganda')->increment('click', array('id' => $item['id']));
             // Save log
             Pi::api('log', 'ads')->click($item['id'], $device);
-            // Set view
-            $this->view()->setTemplate('open')->setLayout('layout-content');
-            $this->view()->assign('url', $item['url']);
+            // Go to ad
+            return $this->toUrlExtra($item['url']);
         } else {
-            $this->view()->setTemplate(false)->setLayout('layout-content');
             return $this->redirect()->toRoute('home');
         }
     }
-}	
+
+    public function toUrlExtra($url)
+    {
+        $response = $this->getResponse();
+        $response->getHeaders()->addHeaderLine('Location', $url)->addHeaderLine('Referer', Pi::url());
+        $response->setStatusCode(302);
+        return $response;
+    }
+}

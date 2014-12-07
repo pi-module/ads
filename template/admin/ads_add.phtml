@@ -1,5 +1,5 @@
-<div class="ads">
+<div class="clearfix">
 	<h3><?php echo $this->escape($title); ?></h3>
 	<div class="well"><?php echo $this->escape($message); ?></div>
-	<?php include $this->templateComponent('form'); ?>
+	<?php echo $this->form($form); ?>
 </div>
