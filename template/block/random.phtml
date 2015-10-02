@@ -1,11 +1,11 @@
 <?php if (!empty($block['resources'])) { ?>
-<div class="ads-block-random clearfix">
-	<?php foreach ($block['resources'] as $resources) { ?>
-	<div class="ads-item center-block">
-		<a rel="external nofollow" target="_blank" title="<?php echo $resources['title']; ?>" href="<?php echo $resources['back_url']; ?>">
-			<img class="img-responsive img-rounded" src="<?php echo $resources['image_url']; ?>" alt="<?php echo $resources['title']; ?>" />
-		</a>
+	<div class="ads-block-random clearfix">
+		<?php foreach ($block['resources'] as $resources) { ?>
+			<div class="ads-item text-center">
+				<a rel="external nofollow" target="_blank" title="<?php echo $resources['title']; ?>" href="<?php echo $resources['back_url']; ?>">
+					<img class="img-responsive" src="<?php echo $resources['image_url']; ?>" alt="<?php echo $resources['title']; ?>" />
+				</a>
+			</div>
+		<?php } ?>
 	</div>
-	<?php } ?>
-</div>
 <?php } ?>
