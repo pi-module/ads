@@ -1,11 +1,9 @@
 <?php if (!empty($block['resources'])) { ?>
 <div class="ads-block-select clearfix">
-	<?php foreach ($block['resources'] as $resources) { ?>
-		<div class="ads-item text-center">
-			<a rel="external nofollow" target="_blank" title="<?php echo $resources['title']; ?>" href="<?php echo $resources['back_url']; ?>">
-				<img class="img-responsive" src="<?php echo $resources['image_url']; ?>" alt="<?php echo $resources['title']; ?>" />
-			</a>
-		</div>
-	<?php } ?>
+	<div class="ads-item text-center">
+		<a rel="external nofollow" target="_blank" title="<?php echo $block['resources']['title']; ?>" href="<?php echo $block['resources']['back_url']; ?>">
+			<img class="img-responsive" src="<?php echo $block['resources']['image_url']; ?>" alt="<?php echo $block['resources']['title']; ?>" />
+		</a>
+	</div>
 </div>
 <?php } ?>
