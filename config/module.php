@@ -15,7 +15,7 @@ return array(
     'meta'         => array(
         'title'         => _a('Ads'),
         'description'   => _a('For generate ads'),
-        'version'       => '1.2.2',
+        'version'       => '1.2.3',
         'license'       => 'New BSD',
         'logo'          => 'image/logo.png',
         'readme'        => 'docs/readme.txt',
