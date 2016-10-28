@@ -20,10 +20,6 @@ use Module\Ads\Form\CategoryFilter;
 
 class CategoryController extends ActionController
 {
-    protected $categoryColumns = array(
-        'id', 'title', 'height', 'width'
-    );
- 
     public function indexAction()
     {
         $order = array('id DESC');
@@ -33,7 +29,7 @@ class CategoryController extends ActionController
             $list[$row->id] = $row->toArray();
         }
         // Set view
-        $this->view()->setTemplate('category_index');
+        $this->view()->setTemplate('category-index');
         $this->view()->assign('list', $list);
     }
 
@@ -49,12 +45,6 @@ class CategoryController extends ActionController
             $form->setData($data);
             if ($form->isValid()) {
                 $values = $form->getData();
-                // Set just story fields
-                foreach (array_keys($values) as $key) {
-                    if (!in_array($key, $this->categoryColumns)) {
-                        unset($values[$key]);
-                    }
-                }
                 // Save values
                 if (!empty($values['id'])) {
                     $row = $this->getModel('category')->find($values['id']);
@@ -75,7 +65,7 @@ class CategoryController extends ActionController
             }   
         }    
         // Set view
-        $this->view()->setTemplate('category_add');
+        $this->view()->setTemplate('category-update');
         $this->view()->assign('form', $form);
         $this->view()->assign('title', __('Add a Category'));
     }

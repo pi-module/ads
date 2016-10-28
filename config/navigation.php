@@ -16,44 +16,112 @@ return array(
     // Admin side
     'admin' => array(
         'index' => array(
-            'label'         => _a('Ads'),
-            'permission'    => array(
-                'resource'  => 'index',
+            'label' => _a('Ads'),
+            'permission' => array(
+                'resource' => 'index',
             ),
-            'route'         => 'admin',
-            'module'        => 'ads',
-            'controller'    => 'index',
-            'action'        => 'index',
+            'route' => 'admin',
+            'module' => 'ads',
+            'controller' => 'index',
+            'action' => 'index',
+            'pages' => array(
+                'index' => array(
+                    'label' => _a('Ads'),
+                    'permission' => array(
+                        'resource' => 'index',
+                    ),
+                    'route' => 'admin',
+                    'module' => 'ads',
+                    'controller' => 'index',
+                    'action' => 'index',
+                ),
+                'updateImageWeb' => array(
+                    'label' => _a('Image web'),
+                    'permission' => array(
+                        'resource' => 'index',
+                    ),
+                    'route' => 'admin',
+                    'module' => 'ads',
+                    'controller' => 'index',
+                    'action' => 'update',
+                    'params'        => array(
+                        'type' => 'image',
+                        'device' => 'web',
+                    ),
+                ),
+                'updateHtmlWeb' => array(
+                    'label' => _a('Html web'),
+                    'permission' => array(
+                        'resource' => 'index',
+                    ),
+                    'route' => 'admin',
+                    'module' => 'ads',
+                    'controller' => 'index',
+                    'action' => 'update',
+                    'params'        => array(
+                        'type' => 'html',
+                        'device' => 'web',
+                    ),
+                ),
+                'updateScriptWeb' => array(
+                    'label' => _a('Script web'),
+                    'permission' => array(
+                        'resource' => 'index',
+                    ),
+                    'route' => 'admin',
+                    'module' => 'ads',
+                    'controller' => 'index',
+                    'action' => 'update',
+                    'params'        => array(
+                        'type' => 'script',
+                        'device' => 'web',
+                    ),
+                ),
+                'updateImageMobile' => array(
+                    'label' => _a('Image mobile'),
+                    'permission' => array(
+                        'resource' => 'index',
+                    ),
+                    'route' => 'admin',
+                    'module' => 'ads',
+                    'controller' => 'index',
+                    'action' => 'update',
+                    'params'        => array(
+                        'type' => 'image',
+                        'device' => 'mobile',
+                    ),
+                ),
+            ),
         ),
         'category' => array(
-            'label'         => _a('Category'),
-            'permission'    => array(
-                'resource'  => 'category',
+            'label' => _a('Category'),
+            'permission' => array(
+                'resource' => 'category',
             ),
-            'route'         => 'admin',
-            'module'        => 'ads',
-            'controller'    => 'category',
-            'action'        => 'index',
+            'route' => 'admin',
+            'module' => 'ads',
+            'controller' => 'category',
+            'action' => 'index',
         ),
         'view' => array(
-            'label'         => _a('View log'),
-            'permission'    => array(
-                'resource'  => 'log',
+            'label' => _a('View log'),
+            'permission' => array(
+                'resource' => 'log',
             ),
-            'route'         => 'admin',
-            'module'        => 'ads',
-            'controller'    => 'log',
-            'action'        => 'view',
+            'route' => 'admin',
+            'module' => 'ads',
+            'controller' => 'log',
+            'action' => 'view',
         ),
         'click' => array(
-            'label'         => _a('Click log'),
-            'permission'    => array(
-                'resource'  => 'log',
+            'label' => _a('Click log'),
+            'permission' => array(
+                'resource' => 'log',
             ),
-            'route'         => 'admin',
-            'module'        => 'ads',
-            'controller'    => 'log',
-            'action'        => 'click',
+            'route' => 'admin',
+            'module' => 'ads',
+            'controller' => 'log',
+            'action' => 'click',
         ),
     ),
 );

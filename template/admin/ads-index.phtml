@@ -1,8 +1,7 @@
 <div class="clearfix">
-	<p>
-	   <a class="btn btn-primary" title="<?php _e('New ads for web'); ?>" href="<?php echo $this->url('', array('action' => 'web')); ?>"><i class="fa fa-desktop"></i> <?php _e('New ads for web'); ?></a>
-	   <a class="btn btn-primary" title="<?php _e('New ads for mobile'); ?>" href="<?php echo $this->url('', array('action' => 'mobile')); ?>"><i class="fa fa-mobile"></i> <?php _e('New ads for mobile'); ?></a>
-	</p>
+	<div class="alert alert-danger" role="alert">
+		<?php _e('Please do not use ads or ad word on image name or image path or your codes, if you or your user browsers have adblock add-on, your ads hide by it'); ?>
+	</div>
 	<?php if (!empty($list1)) { ?>
 	<h3><?php _e('List of active ads for web'); ?></h3>
 	<table class="table table-striped table-bordered table-condensed">
@@ -15,9 +14,7 @@
 		<tr>
 			<td><?php echo $this->escape($item['id']); ?></td>
 			<td clas="clearfix">
-				<div class="col-md-3">
-					<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object img-thumbnail"></div>
-				<div class="col-md-9">
+                <div class="col-md-9">
 					<h4><?php echo $this->escape($item['title']); ?></h4>
 					<div class="col-md-6">
 						<p><strong><?php _e('Publish time'); ?></strong> : <?php echo $this->escape($item['time_publish']); ?></p>
@@ -28,8 +25,20 @@
 						<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
 					</div>
 				</div>
+                <div class="col-md-3">
+                    <?php if ($item['type'] == 'image') { ?>
+                        <img src="<?php echo $this->escape($item['image_url']); ?>" alt="<?php echo $this->escape($item['title']); ?>" class="img-responsive img-thumbnail">
+                    <?php } ?>
+                </div>
 			</td>
-			<td><a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array('action' => $this->escape($item['device']), 'id' => $item['id'])); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a></td>
+			<td>
+                <a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array(
+                    'action' => 'update',
+                    'id' => $item['id'],
+                    'type' => $item['type'],
+                    'device' => $item['device'],
+                )); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a>
+            </td>
 		</tr>
 		<?php } ?>
 	</table>	
@@ -47,8 +56,6 @@
 		<tr>
 			<td><?php echo $this->escape($item['id']); ?></td>
 			<td clas="clearfix">
-				<div class="col-md-3">
-					<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object img-thumbnail"></div>
 				<div class="col-md-9">
 					<h4><?php echo $this->escape($item['title']); ?></h4>
 					<div class="col-md-6">
@@ -60,8 +67,20 @@
 						<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
 					</div>
 				</div>
+                <div class="col-md-3">
+                    <?php if ($item['type'] == 'image') { ?>
+                        <img src="<?php echo $this->escape($item['image_url']); ?>" alt="<?php echo $this->escape($item['title']); ?>" class="img-responsive img-thumbnail">
+                    <?php } ?>
+                </div>
 			</td>
-			<td><a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array('action' => $this->escape($item['device']), 'id' => $item['id'])); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a></td>
+            <td>
+                <a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array(
+                    'action' => 'update',
+                    'id' => $item['id'],
+                    'type' => $item['type'],
+                    'device' => $item['device'],
+                )); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a>
+            </td>
 		</tr>
 		<?php } ?>
 	</table>
@@ -79,8 +98,6 @@
 		<tr>
 			<td><?php echo $this->escape($item['id']); ?></td>
 			<td clas="clearfix">
-				<div class="col-md-3">
-					<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object img-thumbnail"></div>
 				<div class="col-md-9">
 					<h4><?php echo $this->escape($item['title']); ?></h4>
 					<div class="col-md-6">
@@ -92,9 +109,21 @@
 						<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
 					</div>
 				</div>
+                <div class="col-md-3">
+                    <?php if ($item['type'] == 'image') { ?>
+                        <img src="<?php echo $this->escape($item['image_url']); ?>" alt="<?php echo $this->escape($item['title']); ?>" class="img-responsive img-thumbnail">
+                    <?php } ?>
+                </div>
 			</td>
-			<td><a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array('action' => $this->escape($item['device']), 'id' => $item['id'])); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a></td>
-		</tr>
+            <td>
+                <a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array(
+                    'action' => 'update',
+                    'id' => $item['id'],
+                    'type' => $item['type'],
+                    'device' => $item['device'],
+                )); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a>
+            </td>
+        </tr>
 		<?php } ?>
 	</table>
 	<?php } ?>
@@ -111,8 +140,6 @@
 		<tr>
 			<td><?php echo $this->escape($item['id']); ?></td>
 			<td clas="clearfix">
-				<div class="col-md-3">
-					<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object img-thumbnail"></div>
 				<div class="col-md-9">
 					<h4><?php echo $this->escape($item['title']); ?></h4>
 					<div class="col-md-6">
@@ -124,9 +151,21 @@
 						<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
 					</div>
 				</div>
+                <div class="col-md-3">
+                    <?php if ($item['type'] == 'image') { ?>
+                        <img src="<?php echo $this->escape($item['image_url']); ?>" alt="<?php echo $this->escape($item['title']); ?>" class="img-responsive img-thumbnail">
+                    <?php } ?>
+                </div>
 			</td>
-			<td><a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array('action' => $this->escape($item['device']), 'id' => $item['id'])); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a></td>
-		</tr>
+            <td>
+                <a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array(
+                    'action' => 'update',
+                    'id' => $item['id'],
+                    'type' => $item['type'],
+                    'device' => $item['device'],
+                )); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a>
+            </td>
+        </tr>
 		<?php } ?>
 	</table>
 	<?php } ?>
@@ -143,8 +182,6 @@
 		<tr>
 			<td><?php echo $this->escape($item['id']); ?></td>
 			<td clas="clearfix">
-				<div class="col-md-3">
-					<img src="<?php echo $this->escape($item['image_url']); ?>" width ="100" height="100" alt="<?php echo $this->escape($item['title']); ?>" class="media-object img-thumbnail"></div>
 				<div class="col-md-9">
 					<h4><?php echo $this->escape($item['title']); ?></h4>
 					<div class="col-md-6">
@@ -156,9 +193,21 @@
 						<p><strong><?php _e('Click'); ?></strong> : <?php echo $this->escape($item['click']); ?></p>
 					</div>
 				</div>
+                <div class="col-md-3">
+                    <?php if ($item['type'] == 'image') { ?>
+                        <img src="<?php echo $this->escape($item['image_url']); ?>" alt="<?php echo $this->escape($item['title']); ?>" class="img-responsive img-thumbnail">
+                    <?php } ?>
+                </div>
 			</td>
-			<td><a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array('action' => $this->escape($item['device']), 'id' => $item['id'])); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a></td>
-		</tr>
+            <td>
+                <a class="btn btn-primary" title="<?php _e('Edit'); ?>" href="<?php echo $this->url('', array(
+                    'action' => 'update',
+                    'id' => $item['id'],
+                    'type' => $item['type'],
+                    'device' => $item['device'],
+                )); ?>"><i class="fa fa-edit"></i> <?php _e('Edit'); ?></a>
+            </td>
+        </tr>
 		<?php } ?>
 	</table>
 	<?php } ?>

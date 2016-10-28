@@ -18,15 +18,16 @@ use Pi\Form\Form as BaseForm;
 
 class CategoryForm extends BaseForm
 {
-	public function __construct($name = null)
+	public function __construct($name = null, $option = array())
     {
+        $this->option = $option;
         parent::__construct($name);
     }
 
     public function getInputFilter()
     {
         if (!$this->filter) {
-            $this->filter = new CategoryFilter;
+            $this->filter = new CategoryFilter($this->option);
         }
         return $this->filter;
     }
@@ -49,6 +50,7 @@ class CategoryForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'description' => '',
+                'required' => true,
             )
         ));
         // height
@@ -60,6 +62,7 @@ class CategoryForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'description' => '',
+                'required' => true,
             )
         ));
         // width
@@ -71,6 +74,7 @@ class CategoryForm extends BaseForm
             'attributes' => array(
                 'type' => 'text',
                 'description' => '',
+                'required' => true,
             )
         ));
         // Save
