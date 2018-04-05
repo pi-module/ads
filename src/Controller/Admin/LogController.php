@@ -23,78 +23,78 @@ class LogController extends ActionController
     public function viewAction()
     {
         // Get page
-        $page = $this->params('page', 1);
+        $page   = $this->params('page', 1);
         $module = $this->params('module');
         // Get info
-        $list = array();
-        $order = array('id DESC', 'time_create DESC');
+        $list   = [];
+        $order  = ['id DESC', 'time_create DESC'];
         $offset = (int)($page - 1) * $this->config('admin_perpage');
-        $limit = intval($this->config('admin_perpage'));
+        $limit  = intval($this->config('admin_perpage'));
         $select = $this->getModel('view_log')->select()->order($order)->offset($offset)->limit($limit);
         $rowset = $this->getModel('view_log')->selectWith($select);
         // Make list
         foreach ($rowset as $row) {
-            $list[$row->id] = $row->toArray();
+            $list[$row->id]                = $row->toArray();
             $list[$row->id]['time_create'] = _date($list[$row->id]['time_create']);
         }
         // Set paginator
-        $count = array('count' => new Expression('count(*)'));
-        $select = $this->getModel('view_log')->select()->columns($count);
-        $count = $this->getModel('view_log')->selectWith($select)->current()->count;
+        $count     = ['count' => new Expression('count(*)')];
+        $select    = $this->getModel('view_log')->select()->columns($count);
+        $count     = $this->getModel('view_log')->selectWith($select)->current()->count;
         $paginator = Paginator::factory(intval($count));
         $paginator->setItemCountPerPage($this->config('admin_perpage'));
         $paginator->setCurrentPageNumber($page);
-        $paginator->setUrlOptions(array(
-            'router'    => $this->getEvent()->getRouter(),
-            'route'     => $this->getEvent()->getRouteMatch()->getMatchedRouteName(),
-            'params'    => array_filter(array(
-                'module'        => $this->getModule(),
-                'controller'    => 'log',
-                'action'        => 'view',
-            )),
-        ));
+        $paginator->setUrlOptions([
+            'router' => $this->getEvent()->getRouter(),
+            'route'  => $this->getEvent()->getRouteMatch()->getMatchedRouteName(),
+            'params' => array_filter([
+                'module'     => $this->getModule(),
+                'controller' => 'log',
+                'action'     => 'view',
+            ]),
+        ]);
         // Set view
         $this->view()->setTemplate('log-view');
         $this->view()->assign('list', $list);
-        $this->view()->assign('paginator', $paginator);	
+        $this->view()->assign('paginator', $paginator);
     }
 
     public function clickAction()
     {
         // Get page
-        $page = $this->params('page', 1);
+        $page   = $this->params('page', 1);
         $module = $this->params('module');
         // Get info
-        $list = array();
-        $order = array('id DESC', 'time_create DESC');
+        $list   = [];
+        $order  = ['id DESC', 'time_create DESC'];
         $offset = (int)($page - 1) * $this->config('admin_perpage');
-        $limit = intval($this->config('admin_perpage'));
+        $limit  = intval($this->config('admin_perpage'));
         $select = $this->getModel('click_log')->select()->order($order)->offset($offset)->limit($limit);
         $rowset = $this->getModel('click_log')->selectWith($select);
         // Make list
         foreach ($rowset as $row) {
-            $list[$row->id] = $row->toArray();
+            $list[$row->id]                = $row->toArray();
             $list[$row->id]['time_create'] = _date($list[$row->id]['time_create']);
         }
         // Set paginator
-        $count = array('count' => new Expression('count(*)'));
-        $select = $this->getModel('click_log')->select()->columns($count);
-        $count = $this->getModel('click_log')->selectWith($select)->current()->count;
+        $count     = ['count' => new Expression('count(*)')];
+        $select    = $this->getModel('click_log')->select()->columns($count);
+        $count     = $this->getModel('click_log')->selectWith($select)->current()->count;
         $paginator = Paginator::factory(intval($count));
         $paginator->setItemCountPerPage($this->config('admin_perpage'));
         $paginator->setCurrentPageNumber($page);
-        $paginator->setUrlOptions(array(
-            'router'    => $this->getEvent()->getRouter(),
-            'route'     => $this->getEvent()->getRouteMatch()->getMatchedRouteName(),
-            'params'    => array_filter(array(
-                'module'        => $this->getModule(),
-                'controller'    => 'log',
-                'action'        => 'click',
-            )),
-        ));
+        $paginator->setUrlOptions([
+            'router' => $this->getEvent()->getRouter(),
+            'route'  => $this->getEvent()->getRouteMatch()->getMatchedRouteName(),
+            'params' => array_filter([
+                'module'     => $this->getModule(),
+                'controller' => 'log',
+                'action'     => 'click',
+            ]),
+        ]);
         // Set view
         $this->view()->setTemplate('log-click');
         $this->view()->assign('list', $list);
-        $this->view()->assign('paginator', $paginator);	  	
+        $this->view()->assign('paginator', $paginator);
     }
 }

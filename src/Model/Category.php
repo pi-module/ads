@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Ads\Model;
 
 use Pi\Application\Model\Model;
@@ -19,10 +20,11 @@ class Category extends Model
     /**
      * {@inheritDoc}
      */
-    protected $columns = array(
-        'id',
-        'title',
-        'height',
-        'width',
-    );
+    protected $columns
+        = [
+            'id',
+            'title',
+            'height',
+            'width',
+        ];
 }

@@ -1,17 +1,24 @@
 <?php if (isset($block['resources']) && !empty($block['resources'])) { ?>
-	<div class="extra-block-random clearfix">
-		<?php foreach ($block['resources'] as $resources) { ?>
-			<div class="extra-item text-center">
-				<?php if ($resources['type'] == 'image') { ?>
-					<a rel="external nofollow" target="_blank" title="<?php echo $resources['title']; ?>" href="<?php echo $resources['back_url']; ?>">
-						<img class="img-responsive" src="<?php echo $resources['image_web']; ?>" alt="<?php echo $resources['title']; ?>" />
-					</a>
-				<?php } elseif ($resources['type'] == 'html') { ?>
-					<?php echo $resources['html']; ?>
-				<?php } elseif ($resources['type'] == 'script') { ?>
-					<?php echo sprintf('<script>%s</script>', $resources['script']); ?>
-				<?php } ?>
-			</div>
-		<?php } ?>
-	</div>
+    <div class="extra-block-random clearfix">
+        <?php foreach ($block['resources'] as $resources) { ?>
+            <div class="extra-item text-center">
+                <?php if ($resources['type'] == 'image') { ?>
+                    <a rel="external nofollow" target="_blank" title="<?php echo $resources['title']; ?>"
+                       href="<?php echo $resources['back_url']; ?>">
+                        <img class="img-responsive" src="<?php echo $resources['image_web']; ?>"
+                             alt="<?php echo $resources['title']; ?>"/>
+                    </a>
+                <?php } elseif ($resources['type'] == 'html') { ?>
+                    <?php echo $resources['html']; ?>
+                <?php } elseif ($resources['type'] == 'script') { ?>
+                    <?php echo sprintf('<script>%s</script>', $resources['script']); ?>
+                <?php } elseif ($resources['type'] == 'link') { ?>
+                    <a rel="external nofollow" target="_blank" title="<?php echo $resources['title']; ?>"
+                       href="<?php echo $resources['back_url']; ?>">
+                        <?php echo $resources['title']; ?>
+                    </a>
+                <?php } ?>
+            </div>
+        <?php } ?>
+    </div>
 <?php } ?>

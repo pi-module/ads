@@ -10,18 +10,18 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
-return array(
+return [
     // route ads
-    'ads' => array(
+    'ads' => [
         'name'    => 'ads',
         'type'    => 'Module\Ads\Route\Ads',
-        'options' => array(
+        'options' => [
             'route'    => '/ads',
-            'defaults' => array(
+            'defaults' => [
                 'module'     => 'ads',
                 'controller' => 'index',
-                'action'     => 'index'
-            )
-        ),
-    )
-);
+                'action'     => 'index',
+            ],
+        ],
+    ],
+];

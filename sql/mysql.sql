@@ -10,7 +10,7 @@ CREATE TABLE `{propaganda}` (
   `view`           INT(10) UNSIGNED                 NOT NULL DEFAULT '0',
   `click`          INT(10) UNSIGNED                 NOT NULL DEFAULT '0',
   `device`         ENUM ('web', 'mobile')           NOT NULL DEFAULT 'web',
-  `type`           ENUM ('image', 'html', 'script') NOT NULL DEFAULT 'image',
+  `type`           ENUM ('image', 'html', 'script', 'link') NOT NULL DEFAULT 'image',
   `image_web`      VARCHAR(255)                     NOT NULL DEFAULT '',
   `image_mobile_1` VARCHAR(255)                     NOT NULL DEFAULT '',
   `image_mobile_2` VARCHAR(255)                     NOT NULL DEFAULT '',

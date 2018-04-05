@@ -13,10 +13,10 @@
 
 namespace Module\Ads\Controller\Admin;
 
+use Module\Ads\Form\AdsFilter;
+use Module\Ads\Form\AdsForm;
 use Pi;
 use Pi\Mvc\Controller\ActionController;
-use Module\Ads\Form\AdsForm;
-use Module\Ads\Form\AdsFilter;
 use Zend\Db\Sql\Predicate\Expression;
 
 class IndexController extends ActionController
@@ -24,59 +24,59 @@ class IndexController extends ActionController
     public function indexAction()
     {
         // Set Info
-        $order = array('time_create DESC', 'id DESC');
-        $where1 = array('device' => 'web', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time());
-        $where2 = array('device' => 'mobile', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time());
-        $where3 = array('status' => 1, 'time_publish > ?' => time());
-        $where4 = array('status' => 1, 'time_expire < ?' => time());
-        $where5 = array('status != ?' => 1);
+        $order  = ['time_create DESC', 'id DESC'];
+        $where1 = ['device' => 'web', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time()];
+        $where2 = ['device' => 'mobile', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time()];
+        $where3 = ['status' => 1, 'time_publish > ?' => time()];
+        $where4 = ['status' => 1, 'time_expire < ?' => time()];
+        $where5 = ['status != ?' => 1];
         // Get list 1
         $select = $this->getModel('propaganda')->select()->where($where1)->order($order);
         $rowset = $this->getModel('propaganda')->selectWith($select);
         foreach ($rowset as $row) {
-            $list1[$row->id] = $row->toArray();
-            $list1[$row->id]['image_url'] = $list1[$row->id]['image_web'];
+            $list1[$row->id]                 = $row->toArray();
+            $list1[$row->id]['image_url']    = $list1[$row->id]['image_web'];
             $list1[$row->id]['time_publish'] = _date($list1[$row->id]['time_publish']);
-            $list1[$row->id]['time_expire'] = _date($list1[$row->id]['time_expire']);
+            $list1[$row->id]['time_expire']  = _date($list1[$row->id]['time_expire']);
         }
         // Get list 2
         $select = $this->getModel('propaganda')->select()->where($where2)->order($order);
         $rowset = $this->getModel('propaganda')->selectWith($select);
         foreach ($rowset as $row) {
-            $list2[$row->id] = $row->toArray();
-            $list2[$row->id]['image_url'] = $list2[$row->id]['image_mobile_1'];
+            $list2[$row->id]                 = $row->toArray();
+            $list2[$row->id]['image_url']    = $list2[$row->id]['image_mobile_1'];
             $list2[$row->id]['time_publish'] = _date($list2[$row->id]['time_publish']);
-            $list2[$row->id]['time_expire'] = _date($list2[$row->id]['time_expire']);
+            $list2[$row->id]['time_expire']  = _date($list2[$row->id]['time_expire']);
         }
         // Get list 3
         $select = $this->getModel('propaganda')->select()->where($where3)->order($order);
         $rowset = $this->getModel('propaganda')->selectWith($select);
         foreach ($rowset as $row) {
-            $list3[$row->id] = $row->toArray();
-            $list3[$row->id]['image_url'] = ($list3[$row->id]['device'] == 'web') ? 
-                                             $list3[$row->id]['image_web'] : $list3[$row->id]['image_mobile_1'];
+            $list3[$row->id]                 = $row->toArray();
+            $list3[$row->id]['image_url']    = ($list3[$row->id]['device'] == 'web') ?
+                $list3[$row->id]['image_web'] : $list3[$row->id]['image_mobile_1'];
             $list3[$row->id]['time_publish'] = _date($list3[$row->id]['time_publish']);
-            $list3[$row->id]['time_expire'] = _date($list3[$row->id]['time_expire']);
+            $list3[$row->id]['time_expire']  = _date($list3[$row->id]['time_expire']);
         }
         // Get list 4
         $select = $this->getModel('propaganda')->select()->where($where4)->order($order);
         $rowset = $this->getModel('propaganda')->selectWith($select);
         foreach ($rowset as $row) {
-            $list4[$row->id] = $row->toArray();
-            $list4[$row->id]['image_url'] = ($list4[$row->id]['device'] == 'web') ? 
-                                             $list4[$row->id]['image_web'] : $list4[$row->id]['image_mobile_1'];
+            $list4[$row->id]                 = $row->toArray();
+            $list4[$row->id]['image_url']    = ($list4[$row->id]['device'] == 'web') ?
+                $list4[$row->id]['image_web'] : $list4[$row->id]['image_mobile_1'];
             $list4[$row->id]['time_publish'] = _date($list4[$row->id]['time_publish']);
-            $list4[$row->id]['time_expire'] = _date($list4[$row->id]['time_expire']);
+            $list4[$row->id]['time_expire']  = _date($list4[$row->id]['time_expire']);
         }
         // Get list 5
         $select = $this->getModel('propaganda')->select()->where($where5)->order($order);
         $rowset = $this->getModel('propaganda')->selectWith($select);
         foreach ($rowset as $row) {
-            $list5[$row->id] = $row->toArray();
-            $list5[$row->id]['image_url'] = ($list5[$row->id]['device'] == 'web') ? 
-                                             $list5[$row->id]['image_web'] : $list5[$row->id]['image_mobile_1'];
+            $list5[$row->id]                 = $row->toArray();
+            $list5[$row->id]['image_url']    = ($list5[$row->id]['device'] == 'web') ?
+                $list5[$row->id]['image_web'] : $list5[$row->id]['image_mobile_1'];
             $list5[$row->id]['time_publish'] = _date($list5[$row->id]['time_publish']);
-            $list5[$row->id]['time_expire'] = _date($list5[$row->id]['time_expire']);
+            $list5[$row->id]['time_expire']  = _date($list5[$row->id]['time_expire']);
         }
         // Set view
         $this->view()->setTemplate('ads-index');
@@ -90,28 +90,28 @@ class IndexController extends ActionController
     public function updateAction()
     {
         // check category
-        $columns = array('count' => new Expression('count(*)'));
-        $select = Pi::model('category', $this->getModule())->select()->columns($columns);
+        $columns       = ['count' => new Expression('count(*)')];
+        $select        = Pi::model('category', $this->getModule())->select()->columns($columns);
         $categoryCount = Pi::model('category', $this->getModule())->selectWith($select)->current()->count;
         if (!$categoryCount) {
-            return $this->redirect()->toRoute('', array(
+            return $this->redirect()->toRoute('', [
                 'controller' => 'category',
-                'action' => 'update'
-            ));
+                'action'     => 'update',
+            ]);
         }
         // Get id
-        $id = $this->params('id');
-        $type = $this->params('type');
+        $id     = $this->params('id');
+        $type   = $this->params('type');
         $device = $this->params('device');
         // Set option
-        $option = array(
-            'type' => 'image',
+        $option = [
+            'type'   => 'image',
             'device' => 'web',
-        );
-        if (in_array($type, array('image', 'html', 'script'))) {
+        ];
+        if (in_array($type, ['image', 'html', 'script', 'link'])) {
             $option['type'] = $type;
         }
-        if (in_array($device, array('web', 'mobile'))) {
+        if (in_array($device, ['web', 'mobile'])) {
             $option['device'] = $device;
         }
         $option['typeDevice'] = sprintf('%s-%s', $option['type'], $option['device']);
@@ -127,29 +127,30 @@ class IndexController extends ActionController
                 // Set time
                 if (empty($values['id'])) {
                     $values['time_create'] = time();
-                    $values['type'] = $option['type'];
-                    $values['device'] = $option['device'];
+                    $values['type']        = $option['type'];
+                    $values['device']      = $option['device'];
                 }
                 $values['time_publish'] = strtotime($values['time_publish']);
-                $values['time_expire'] = strtotime($values['time_expire']);
+                $values['time_expire']  = strtotime($values['time_expire']);
                 // Save values
                 if (!empty($values['id'])) {
                     $row = $this->getModel('propaganda')->find($values['id']);
                 } else {
+                    unset($values['id']);
                     $row = $this->getModel('propaganda')->createRow();
                 }
                 $row->assign($values);
                 $row->save();
                 // Jump
                 $message = __('Ads data saved successfully.');
-                $url = array('action' => 'index');
+                $url     = ['action' => 'index'];
                 $this->jump($url, $message);
             }
         } else {
             if ($id) {
-                $values = $this->getModel('propaganda')->find($id)->toArray();
+                $values                 = $this->getModel('propaganda')->find($id)->toArray();
                 $values['time_publish'] = date('Y-m-d', $values['time_publish']);
-                $values['time_expire'] = date('Y-m-d', $values['time_expire']);
+                $values['time_expire']  = date('Y-m-d', $values['time_expire']);
                 $form->setData($values);
             }
         }
@@ -161,9 +162,9 @@ class IndexController extends ActionController
                 break;
 
             case 'image-mobile':
-                $title = __('Manage image Ads for mobile');
+                $title   = __('Manage image Ads for mobile');
                 $message = __('Ads for send from website to mobile app, it send JSON array than included type and ad info, you can set 0 1 or 2 for type on module setting and on you add you can set if type is 2 show website app or use online service by set it to 1 or set 0 for off ads system on mobile. you can use this link for set on mobile app : %s');
-                $message = sprintf($message, Pi::url($this->url('ads', array('action' => 'view'))));
+                $message = sprintf($message, Pi::url($this->url('ads', ['action' => 'view'])));
                 break;
 
             case 'html-web':
@@ -172,6 +173,10 @@ class IndexController extends ActionController
 
             case 'script-web':
                 $title = __('Manage java script Ads for web');
+                break;
+
+            case 'link-web':
+                $title = __('Manage link Ads for web');
                 break;
         }
         // Set view
@@ -184,14 +189,14 @@ class IndexController extends ActionController
     public function webAction()
     {
         // check category
-        $columns = array('count' => new Expression('count(*)'));
-        $select = Pi::model('category', $this->getModule())->select()->columns($columns);
+        $columns       = ['count' => new Expression('count(*)')];
+        $select        = Pi::model('category', $this->getModule())->select()->columns($columns);
         $categoryCount = Pi::model('category', $this->getModule())->selectWith($select)->current()->count;
         if (!$categoryCount) {
-            return $this->redirect()->toRoute('', array(
+            return $this->redirect()->toRoute('', [
                 'controller' => 'category',
-                'action' => 'update'
-            ));
+                'action'     => 'update',
+            ]);
         }
         // Get id
         $id = $this->params('id');
@@ -209,7 +214,7 @@ class IndexController extends ActionController
                     $values['time_create'] = time();
                 }
                 $values['time_publish'] = strtotime($values['time_publish']);
-                $values['time_expire'] = strtotime($values['time_expire']);
+                $values['time_expire']  = strtotime($values['time_expire']);
                 // Save values
                 if (!empty($values['id'])) {
                     $row = $this->getModel('propaganda')->find($values['id']);
@@ -220,17 +225,17 @@ class IndexController extends ActionController
                 $row->save();
 
                 $message = __('Ads data saved successfully.');
-                $url = array('action' => 'index');
+                $url     = ['action' => 'index'];
                 $this->jump($url, $message);
             }
         } else {
             if ($id) {
-                $values = $this->getModel('propaganda')->find($id)->toArray();
+                $values                 = $this->getModel('propaganda')->find($id)->toArray();
                 $values['time_publish'] = date('Y-m-d', $values['time_publish']);
-                $values['time_expire'] = date('Y-m-d', $values['time_expire']);
+                $values['time_expire']  = date('Y-m-d', $values['time_expire']);
                 $form->setData($values);
-            }   
-        }    
+            }
+        }
         // Set view
 
         $this->view()->setTemplate('ads_add');
@@ -257,7 +262,7 @@ class IndexController extends ActionController
                     $values['time_create'] = time();
                 }
                 $values['time_publish'] = strtotime($values['time_publish']);
-                $values['time_expire'] = strtotime($values['time_expire']);
+                $values['time_expire']  = strtotime($values['time_expire']);
                 // Save values
                 if (!empty($values['id'])) {
                     $row = $this->getModel('propaganda')->find($values['id']);
@@ -268,14 +273,14 @@ class IndexController extends ActionController
                 $row->save();
 
                 $message = __('Ads data saved successfully.');
-                $url = array('action' => 'index');
+                $url     = ['action' => 'index'];
                 $this->jump($url, $message);
             }
         } else {
             if ($id) {
-                $values = $this->getModel('propaganda')->find($id)->toArray();
+                $values                 = $this->getModel('propaganda')->find($id)->toArray();
                 $values['time_publish'] = date('Y-m-d', $values['time_publish']);
-                $values['time_expire'] = date('Y-m-d', $values['time_expire']);
+                $values['time_expire']  = date('Y-m-d', $values['time_expire']);
                 $form->setData($values);
             }
         }

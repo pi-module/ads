@@ -10,6 +10,7 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
+
 namespace Module\Ads\Installer\Action;
 
 use Pi;
@@ -25,9 +26,9 @@ class Update extends BasicUpdate
     protected function attachDefaultListeners()
     {
         $events = $this->events;
-        $events->attach('update.pre', array($this, 'updateSchema'));
+        $events->attach('update.pre', [$this, 'updateSchema']);
         parent::attachDefaultListeners();
-        
+
         return $this;
     }
 
@@ -39,8 +40,8 @@ class Update extends BasicUpdate
         $moduleVersion = $e->getParam('version');
 
         // Set propaganda model
-        $propagandaModel = Pi::model('propaganda', $this->module);
-        $propagandaTable = $propagandaModel->getTable();
+        $propagandaModel   = Pi::model('propaganda', $this->module);
+        $propagandaTable   = $propagandaModel->getTable();
         $propagandaAdapter = $propagandaModel->getAdapter();
 
         if (version_compare($moduleVersion, '1.3.0', '<')) {
@@ -49,11 +50,11 @@ class Update extends BasicUpdate
             try {
                 $propagandaAdapter->query($sql, 'execute');
             } catch (\Exception $exception) {
-                $this->setResult('db', array(
-                    'status' => false,
+                $this->setResult('db', [
+                    'status'  => false,
                     'message' => 'Table alter query failed: '
                         . $exception->getMessage(),
-                ));
+                ]);
                 return false;
             }
             // Alter table field `html`
@@ -61,11 +62,11 @@ class Update extends BasicUpdate
             try {
                 $propagandaAdapter->query($sql, 'execute');
             } catch (\Exception $exception) {
-                $this->setResult('db', array(
-                    'status' => false,
+                $this->setResult('db', [
+                    'status'  => false,
                     'message' => 'Table alter query failed: '
                         . $exception->getMessage(),
-                ));
+                ]);
                 return false;
             }
             // Alter table field `script`
@@ -73,11 +74,26 @@ class Update extends BasicUpdate
             try {
                 $propagandaAdapter->query($sql, 'execute');
             } catch (\Exception $exception) {
-                $this->setResult('db', array(
-                    'status' => false,
+                $this->setResult('db', [
+                    'status'  => false,
                     'message' => 'Table alter query failed: '
                         . $exception->getMessage(),
-                ));
+                ]);
+                return false;
+            }
+        }
+
+        if (version_compare($moduleVersion, '1.3.2', '<')) {
+            // Alter table field `type`
+            $sql = sprintf("ALTER TABLE %s CHANGE `type` `type` ENUM('image','html','script','link') NOT NULL DEFAULT 'image'", $propagandaTable);
+            try {
+                $propagandaAdapter->query($sql, 'execute');
+            } catch (\Exception $exception) {
+                $this->setResult('db', [
+                    'status'  => false,
+                    'message' => 'Table alter query failed: '
+                        . $exception->getMessage(),
+                ]);
                 return false;
             }
         }

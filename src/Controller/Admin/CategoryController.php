@@ -13,16 +13,16 @@
 
 namespace Module\Ads\Controller\Admin;
 
+use Module\Ads\Form\CategoryFilter;
+use Module\Ads\Form\CategoryForm;
 use Pi;
 use Pi\Mvc\Controller\ActionController;
-use Module\Ads\Form\CategoryForm;
-use Module\Ads\Form\CategoryFilter;
 
 class CategoryController extends ActionController
 {
     public function indexAction()
     {
-        $order = array('id DESC');
+        $order  = ['id DESC'];
         $select = $this->getModel('category')->select()->order($order);
         $rowset = $this->getModel('category')->selectWith($select);
         foreach ($rowset as $row) {
@@ -55,15 +55,15 @@ class CategoryController extends ActionController
                 $row->save();
                 // jump
                 $message = __('Category data saved successfully.');
-                $url = array('action' => 'index');
+                $url     = ['action' => 'index'];
                 $this->jump($url, $message);
             }
         } else {
             if ($id) {
                 $values = $this->getModel('category')->find($id)->toArray();
                 $form->setData($values);
-            }   
-        }    
+            }
+        }
         // Set view
         $this->view()->setTemplate('category-update');
         $this->view()->assign('form', $form);

@@ -22,6 +22,7 @@ use Pi\Application\Api\AbstractApi;
  * Pi::api('log', 'ads')->view($propaganda, $device);
  * Pi::api('log', 'ads')->click($propaganda, $device);
  */
+
 class Log extends AbstractApi
 {
     /*
@@ -29,26 +30,26 @@ class Log extends AbstractApi
       */
     public function View($propaganda, $device)
     {
-    	$row = Pi::model('view_log', $this->getModule())->createRow();
-        $row->propaganda = $propaganda;
-        $row->device = $device;
+        $row              = Pi::model('view_log', $this->getModule())->createRow();
+        $row->propaganda  = $propaganda;
+        $row->device      = $device;
         $row->time_create = time();
-        $row->uid = Pi::user()->getId();
-        $row->ip = Pi::user()->getIp();
+        $row->uid         = Pi::user()->getId();
+        $row->ip          = Pi::user()->getIp();
         $row->save();
     }
-    
+
     /*
       * Save click log
       */
     public function Click($propaganda, $device)
     {
-    	$row = Pi::model('click_log', $this->getModule())->createRow();
-        $row->propaganda = $propaganda;
-        $row->device = $device;
+        $row              = Pi::model('click_log', $this->getModule())->createRow();
+        $row->propaganda  = $propaganda;
+        $row->device      = $device;
         $row->time_create = time();
-        $row->uid = Pi::user()->getId();
-        $row->ip = Pi::user()->getIp();
+        $row->uid         = Pi::user()->getId();
+        $row->ip          = Pi::user()->getIp();
         $row->save();
     }
 }	

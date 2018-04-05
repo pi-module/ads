@@ -19,16 +19,16 @@ use Zend\Form\Element\Select;
 class Propaganda extends Select
 {
     /**
-* @return array
-*/
+     * @return array
+     */
     public function getValueOptions()
     {
         if (empty($this->valueOptions)) {
-            $where = array('device' => 'web', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time());
-            $select = Pi::model('propaganda', 'ads')->select()->columns(array('id', 'title'))->where($where);
+            $where  = ['device' => 'web', 'status' => 1, 'time_publish < ?' => time(), 'time_expire > ?' => time()];
+            $select = Pi::model('propaganda', 'ads')->select()->columns(['id', 'title'])->where($where);
             $rowset = Pi::model('propaganda', 'ads')->selectWith($select);
             foreach ($rowset as $row) {
-                $list[$row->id] = $row->toArray();
+                $list[$row->id]    = $row->toArray();
                 $options[$row->id] = $list[$row->id]['title'];
             }
             $this->valueOptions = $options;

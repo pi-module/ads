@@ -10,33 +10,33 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
-return array(
+return [
     // Module meta
-    'meta'         => array(
-        'title'         => _a('Ads'),
-        'description'   => _a('For generate ads'),
-        'version'       => '1.3.0',
-        'license'       => 'New BSD',
-        'logo'          => 'image/logo.png',
-        'readme'        => 'docs/readme.txt',
-        'demo'          => 'http://pialog.org',
-        'icon'          => 'fa-asterisk',
-    ),
+    'meta'     => [
+        'title'       => _a('Ads'),
+        'description' => _a('For generate ads'),
+        'version'     => '1.4.0',
+        'license'     => 'New BSD',
+        'logo'        => 'image/logo.png',
+        'readme'      => 'docs/readme.txt',
+        'demo'        => 'http://pialog.org',
+        'icon'        => 'fa-asterisk',
+    ],
     // Author information
-    'author'        => array(
-        'Name'          => 'Hossein Azizabadi',
-        'email'         => 'azizabadi@faragostaresh.com',
-        'website'       => 'http://pialog.org',
-        'credits'       => 'Pi Engine Team'
-    ),
+    'author'   => [
+        'Name'    => 'Hossein Azizabadi',
+        'email'   => 'azizabadi@faragostaresh.com',
+        'website' => 'http://pialog.org',
+        'credits' => 'Pi Engine Team',
+    ],
     // resource
-    'resource' => array(
-        'database'      => 'database.php',
-        'config'        => 'config.php',
-        'block'         => 'block.php',
-        'permission'    => 'permission.php',
-        'page'          => 'page.php',
-        'navigation'    => 'navigation.php',
-        'route'         => 'route.php',
-    )
-);
+    'resource' => [
+        'database'   => 'database.php',
+        'config'     => 'config.php',
+        'block'      => 'block.php',
+        'permission' => 'permission.php',
+        'page'       => 'page.php',
+        'navigation' => 'navigation.php',
+        'route'      => 'route.php',
+    ],
+];

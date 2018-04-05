@@ -21,11 +21,12 @@ class Ads extends Standard
      * Default values.
      * @var array
      */
-    protected $defaults = array(
-        'module'        => 'ads',
-        'controller'    => 'index',
-        'action'        => 'index'
-    );
+    protected $defaults
+        = [
+            'module'     => 'ads',
+            'controller' => 'index',
+            'action'     => 'index',
+        ];
 
     /**
      * {@inheritDoc}
@@ -37,16 +38,16 @@ class Ads extends Standard
      */
     protected function parse($path)
     {
-        $matches = array();
-        $parts = array_filter(explode($this->structureDelimiter, $path));
+        $matches = [];
+        $parts   = array_filter(explode($this->structureDelimiter, $path));
         // Set controller
-        $matches = array_merge($this->defaults, $matches);
-        $matches['action'] = (in_array($parts[0], array('view', 'click'))) ? $parts[0] : 'click';
+        $matches           = array_merge($this->defaults, $matches);
+        $matches['action'] = (in_array($parts[0], ['view', 'click'])) ? $parts[0] : 'click';
         if (isset($parts[1]) && !empty($parts[1])) {
             $matches['id'] = intval($parts[1]);
         }
         if (isset($parts[2]) && !empty($parts[2])) {
-            $matches['device'] = (in_array($parts[2], array('web', 'mobile'))) ? $parts[2] : 'web';
+            $matches['device'] = (in_array($parts[2], ['web', 'mobile'])) ? $parts[2] : 'web';
         }
         return $matches;
     }
@@ -60,27 +61,28 @@ class Ads extends Standard
      * @return string
      */
     public function assemble(
-        array $params = array(),
-        array $options = array()
-    ) {
+        array $params = [],
+        array $options = []
+    )
+    {
         $mergedParams = array_merge($this->defaults, $params);
         if (!$mergedParams) {
             return $this->prefix;
         }
-        
+
         if (!empty($mergedParams['module'])) {
             $url['module'] = $mergedParams['module'];
         }
 
-        if (!empty($mergedParams['controller']) 
-            && $mergedParams['controller'] != 'index') 
-        {
+        if (!empty($mergedParams['controller'])
+            && $mergedParams['controller'] != 'index'
+        ) {
             $url['controller'] = $mergedParams['controller'];
         }
 
-        if (!empty($mergedParams['action']) 
-            && in_array($mergedParams['action'], array('view', 'click'))) 
-        {
+        if (!empty($mergedParams['action'])
+            && in_array($mergedParams['action'], ['view', 'click'])
+        ) {
             $url['action'] = $mergedParams['action'];
         }
 
@@ -88,9 +90,9 @@ class Ads extends Standard
             $url['id'] = intval($mergedParams['id']);
         }
 
-        if (!empty($mergedParams['device']) 
-            && in_array($mergedParams['device'], array('web', 'mobile'))) 
-        {
+        if (!empty($mergedParams['device'])
+            && in_array($mergedParams['device'], ['web', 'mobile'])
+        ) {
             $url['device'] = $mergedParams['device'];
         }
 

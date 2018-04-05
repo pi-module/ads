@@ -10,54 +10,54 @@
 /**
  * @author Hossein Azizabadi <azizabadi@faragostaresh.com>
  */
-return array(
-    'category' => array(
-        array(
-            'title'  => _a('Admin'),
-            'name'   => 'admin'
-        ),
-        array(
-            'title'  => _a('Mobile'),
-            'name'   => 'mobile'
-        ),
+return [
+    'category' => [
+        [
+            'title' => _a('Admin'),
+            'name'  => 'admin',
+        ],
+        [
+            'title' => _a('Mobile'),
+            'name'  => 'mobile',
+        ],
 
-    ),
-    'item' => array(
+    ],
+    'item'     => [
         // Admin
-        'admin_perpage' => array(
-            'category'     => 'admin',
-            'title'        => _a('Perpage'),
-            'description'  => '',
-            'edit'         => 'text',
-            'filter'       => 'number_int',
-            'value'        => 50
-        ),
+        'admin_perpage'   => [
+            'category'    => 'admin',
+            'title'       => _a('Perpage'),
+            'description' => '',
+            'edit'        => 'text',
+            'filter'      => 'number_int',
+            'value'       => 50,
+        ],
         // Mobile
-        'mobile_ads_type' => array(
-            'title'        => _a('Ads type'),
-            'description'  => ' ',
-            'edit'         => array(
-                'type'        => 'select',
-                'options'     => array(
-                    'options' => array(
-                        0     => _a('Off - Dont show ads on mobile aplication'),
-                        1     => _a('Online - Use online ads service'),
-                        2     => _a('Module - Use ads module'),
-                        3     => _a('Random - Select random between Online and module'),
-                    ),
-                ),
-            ),
-            'filter'       => 'string',
-            'value'        => 0,
-            'category'     => 'mobile',
-        ),
-        'mobile_random' => array(
-            'title'        => _a('Percentage Show'),
-            'description'  => _a('Percentage Show ads between website and online service'),
-            'edit'         => array(
-                'type'     => 'select',
-                'options'  => array(
-                    'options' => array(
+        'mobile_ads_type' => [
+            'title'       => _a('Ads type'),
+            'description' => ' ',
+            'edit'        => [
+                'type'    => 'select',
+                'options' => [
+                    'options' => [
+                        0 => _a('Off - Dont show ads on mobile aplication'),
+                        1 => _a('Online - Use online ads service'),
+                        2 => _a('Module - Use ads module'),
+                        3 => _a('Random - Select random between Online and module'),
+                    ],
+                ],
+            ],
+            'filter'      => 'string',
+            'value'       => 0,
+            'category'    => 'mobile',
+        ],
+        'mobile_random'   => [
+            'title'       => _a('Percentage Show'),
+            'description' => _a('Percentage Show ads between website and online service'),
+            'edit'        => [
+                'type'    => 'select',
+                'options' => [
+                    'options' => [
                         '1-9' => _a('10% website and 90% online'),
                         '2-8' => _a('20% website and 80% online'),
                         '3-7' => _a('30% website and 70% online'),
@@ -67,12 +67,12 @@ return array(
                         '7-3' => _a('70% website and 30% online'),
                         '8-2' => _a('80% website and 20% online'),
                         '9-1' => _a('90% website and 10% online'),
-                    ),
-                ),
-            ),
+                    ],
+                ],
+            ],
             'filter'      => 'string',
             'value'       => '5-5',
             'category'    => 'mobile',
-        ),
-    ),
-);        
+        ],
+    ],
+];        

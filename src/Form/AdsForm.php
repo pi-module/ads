@@ -18,7 +18,7 @@ use Pi\Form\Form as BaseForm;
 
 class AdsForm extends BaseForm
 {
-	public function __construct($name = null, $option = array())
+    public function __construct($name = null, $option = [])
     {
         $this->option = $option;
         parent::__construct($name);
@@ -34,188 +34,186 @@ class AdsForm extends BaseForm
 
     public function init()
     {
-        print_r($this->option);
-
         // id
-        $this->add(array(
-            'name' => 'id',
-            'attributes' => array(
+        $this->add([
+            'name'       => 'id',
+            'attributes' => [
                 'type' => 'hidden',
-            ),
-        ));
+            ],
+        ]);
         // title
-        $this->add(array(
-            'name' => 'title',
-            'options' => array(
+        $this->add([
+            'name'       => 'title',
+            'options'    => [
                 'label' => __('Title'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
+            ],
+            'attributes' => [
+                'type'        => 'text',
                 'description' => '',
-                'required' => true,
-            )
-        ));
+                'required'    => true,
+            ],
+        ]);
         // url
-        $this->add(array(
-            'name' => 'url',
-            'options' => array(
+        $this->add([
+            'name'       => 'url',
+            'options'    => [
                 'label' => __('Url'),
-            ),
-            'attributes' => array(
-                'type' => 'url',
+            ],
+            'attributes' => [
+                'type'        => 'url',
                 'description' => '',
-            )
-        ));
+                'required'    => true,
+            ],
+        ]);
         // Check type and device
         switch ($this->option['typeDevice']) {
             case 'image-web':
                 // image_web
-                $this->add(array(
-                    'name' => 'image_web',
-                    'options' => array(
+                $this->add([
+                    'name'       => 'image_web',
+                    'options'    => [
                         'label' => __('Image'),
-                    ),
-                    'attributes' => array(
-                        'type' => 'url',
+                    ],
+                    'attributes' => [
+                        'type'        => 'url',
                         'description' => '',
-                        'required' => true,
-                    )
-                ));
-
+                        'required'    => true,
+                    ],
+                ]);
                 break;
 
             case 'image-mobile':
                 // image_mobile_1
-                $this->add(array(
-                    'name' => 'image_mobile_1',
-                    'options' => array(
+                $this->add([
+                    'name'       => 'image_mobile_1',
+                    'options'    => [
                         'label' => __('Image 1'),
-                    ),
-                    'attributes' => array(
-                        'type' => 'url',
+                    ],
+                    'attributes' => [
+                        'type'        => 'url',
                         'description' => '',
-                        'required' => true,
-                    )
-                ));
+                        'required'    => true,
+                    ],
+                ]);
                 // image_mobile_2
-                $this->add(array(
-                    'name' => 'image_mobile_2',
-                    'options' => array(
+                $this->add([
+                    'name'       => 'image_mobile_2',
+                    'options'    => [
                         'label' => __('Image 2'),
-                    ),
-                    'attributes' => array(
-                        'type' => 'url',
+                    ],
+                    'attributes' => [
+                        'type'        => 'url',
                         'description' => '',
-                    )
-                ));
+                    ],
+                ]);
                 // image_mobile_3
-                $this->add(array(
-                    'name' => 'image_mobile_3',
-                    'options' => array(
+                $this->add([
+                    'name'       => 'image_mobile_3',
+                    'options'    => [
                         'label' => __('Image 3'),
-                    ),
-                    'attributes' => array(
-                        'type' => 'url',
+                    ],
+                    'attributes' => [
+                        'type'        => 'url',
                         'description' => '',
-                    )
-                ));
+                    ],
+                ]);
                 break;
 
             case 'html-web':
                 // html
-                $this->add(array(
-                    'name' => 'html',
-                    'options' => array(
+                $this->add([
+                    'name'       => 'html',
+                    'options'    => [
                         'label' => __('Html ads'),
-                    ),
-                    'attributes' => array(
-                        'type' => 'textarea',
-                        'rows' => '5',
-                        'cols' => '40',
+                    ],
+                    'attributes' => [
+                        'type'        => 'textarea',
+                        'rows'        => '5',
+                        'cols'        => '40',
                         'description' => __('Put valid HTML code'),
-                        'required' => true,
-                    )
-                ));
+                        'required'    => true,
+                    ],
+                ]);
                 break;
 
             case 'script-web':
                 // script
-                $this->add(array(
-                    'name' => 'script',
-                    'options' => array(
+                $this->add([
+                    'name'       => 'script',
+                    'options'    => [
                         'label' => __('Script ads'),
-                    ),
-                    'attributes' => array(
-                        'type' => 'textarea',
-                        'rows' => '5',
-                        'cols' => '40',
+                    ],
+                    'attributes' => [
+                        'type'        => 'textarea',
+                        'rows'        => '5',
+                        'cols'        => '40',
                         'description' => __('Put valid Java Script code, without <script> and </script>'),
-                        'required' => true,
-                    )
-                ));
+                        'required'    => true,
+                    ],
+                ]);
                 break;
         }
         // category
-        $this->add(array(
-            'name' => 'category',
-            'type' => 'Module\Ads\Form\Element\Category',
-            'options' => array(
+        $this->add([
+            'name'       => 'category',
+            'type'       => 'Module\Ads\Form\Element\Category',
+            'options'    => [
                 'label' => __('Category'),
-            ),
-            'attributes' => array(
-                'size' => 1,
+            ],
+            'attributes' => [
+                'size'     => 1,
                 'multiple' => 0,
                 'required' => true,
-            ),
-        ));
+            ],
+        ]);
         // time_publish
-        $this->add(array(
-            'name' => 'time_publish',
-            'options' => array(
+        $this->add([
+            'name'       => 'time_publish',
+            'options'    => [
                 'label' => __('Publish time'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
-                'value' => date('Y-m-d'),
+            ],
+            'attributes' => [
+                'type'     => 'text',
+                'value'    => date('Y-m-d'),
                 'required' => true,
-            )
-        ));
+            ],
+        ]);
         // time_expire
-        $this->add(array(
-            'name' => 'time_expire',
-            'options' => array(
+        $this->add([
+            'name'       => 'time_expire',
+            'options'    => [
                 'label' => __('Expire time'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
-                'value' => date('Y-m-d', strtotime('+6 month')),
+            ],
+            'attributes' => [
+                'type'     => 'text',
+                'value'    => date('Y-m-d', strtotime('+6 month')),
                 'required' => true,
-            )
-        ));
+            ],
+        ]);
         // status
-        $this->add(array(
-            'name' => 'status',
-            'type' => 'select',
-            'options' => array(
-                'label' => __('Status'),
-                'value_options' => array(
+        $this->add([
+            'name'       => 'status',
+            'type'       => 'select',
+            'options'    => [
+                'label'         => __('Status'),
+                'value_options' => [
                     1 => __('Published'),
                     2 => __('Pending review'),
                     3 => __('Draft'),
                     4 => __('Private'),
-                ),
-            ),
-            'attributes' => array(
+                ],
+            ],
+            'attributes' => [
                 'required' => true,
-            )
-        ));
+            ],
+        ]);
         // Save
-        $this->add(array(
-            'name' => 'submit',
-            'type' => 'submit',
-            'attributes' => array(
+        $this->add([
+            'name'       => 'submit',
+            'type'       => 'submit',
+            'attributes' => [
                 'value' => __('Submit'),
-            )
-        ));
+            ],
+        ]);
     }
 }

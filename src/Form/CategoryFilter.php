@@ -18,42 +18,42 @@ use Zend\InputFilter\InputFilter;
 
 class CategoryFilter extends InputFilter
 {
-    public function __construct($option = array())
+    public function __construct($option = [])
     {
         // id
-        $this->add(array(
-            'name' => 'id',
+        $this->add([
+            'name'     => 'id',
             'required' => false,
-        ));
+        ]);
         // title
-        $this->add(array(
-            'name' => 'title',
+        $this->add([
+            'name'     => 'title',
             'required' => true,
-            'filters' => array(
-                array(
+            'filters'  => [
+                [
                     'name' => 'StringTrim',
-                ),
-            ),
-        ));
+                ],
+            ],
+        ]);
         // height
-        $this->add(array(
-            'name' => 'height',
+        $this->add([
+            'name'     => 'height',
             'required' => true,
-            'filters' => array(
-                array(
+            'filters'  => [
+                [
                     'name' => 'StringTrim',
-                ),
-            ),
-        ));
+                ],
+            ],
+        ]);
         // width
-        $this->add(array(
-            'name' => 'width',
+        $this->add([
+            'name'     => 'width',
             'required' => true,
-            'filters' => array(
-                array(
+            'filters'  => [
+                [
                     'name' => 'StringTrim',
-                ),
-            ),
-        ));
+                ],
+            ],
+        ]);
     }
 }	

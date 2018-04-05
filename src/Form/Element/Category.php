@@ -19,15 +19,15 @@ use Zend\Form\Element\Select;
 class Category extends Select
 {
     /**
-* @return array
-*/
+     * @return array
+     */
     public function getValueOptions()
     {
         if (empty($this->valueOptions)) {
-            $select = Pi::model('category', 'ads')->select()->columns(array('id', 'title'));
+            $select = Pi::model('category', 'ads')->select()->columns(['id', 'title']);
             $rowset = Pi::model('category', 'ads')->selectWith($select);
             foreach ($rowset as $row) {
-                $list[$row->id] = $row->toArray();
+                $list[$row->id]    = $row->toArray();
                 $options[$row->id] = $list[$row->id]['title'];
             }
             $this->valueOptions = $options;

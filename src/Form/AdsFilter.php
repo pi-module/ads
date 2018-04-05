@@ -18,128 +18,128 @@ use Zend\InputFilter\InputFilter;
 
 class AdsFilter extends InputFilter
 {
-    public function __construct($option = array())
+    public function __construct($option = [])
     {
         // id
-        $this->add(array(
-            'name' => 'id',
+        $this->add([
+            'name'     => 'id',
             'required' => false,
-        ));
+        ]);
         // title
-        $this->add(array(
-            'name' => 'title',
+        $this->add([
+            'name'     => 'title',
             'required' => true,
-            'filters' => array(
-                array(
+            'filters'  => [
+                [
                     'name' => 'StringTrim',
-                ),
-            ),
-        ));
+                ],
+            ],
+        ]);
         // url
-        $this->add(array(
-            'name' => 'url',
-            'required' => false,
-            'filters' => array(
-                array(
+        $this->add([
+            'name'     => 'url',
+            'required' => true,
+            'filters'  => [
+                [
                     'name' => 'StringTrim',
-                ),
-            ),
-        ));
+                ],
+            ],
+        ]);
         // Check type and device
         switch ($option['typeDevice']) {
             case 'image-web':
                 // image_web
-                $this->add(array(
-                    'name' => 'image_web',
+                $this->add([
+                    'name'     => 'image_web',
                     'required' => true,
-                    'filters' => array(
-                        array(
+                    'filters'  => [
+                        [
                             'name' => 'StringTrim',
-                        ),
-                    ),
-                ));
+                        ],
+                    ],
+                ]);
 
                 break;
 
             case 'image-mobile':
                 // image_mobile_1
-                $this->add(array(
-                    'name' => 'image_mobile_1',
+                $this->add([
+                    'name'     => 'image_mobile_1',
                     'required' => true,
-                    'filters' => array(
-                        array(
+                    'filters'  => [
+                        [
                             'name' => 'StringTrim',
-                        ),
-                    ),
-                ));
+                        ],
+                    ],
+                ]);
                 // image_mobile_2
-                $this->add(array(
-                    'name' => 'image_mobile_2',
+                $this->add([
+                    'name'     => 'image_mobile_2',
                     'required' => false,
-                    'filters' => array(
-                        array(
+                    'filters'  => [
+                        [
                             'name' => 'StringTrim',
-                        ),
-                    ),
-                ));
+                        ],
+                    ],
+                ]);
                 // image_mobile_3
-                $this->add(array(
-                    'name' => 'image_mobile_3',
+                $this->add([
+                    'name'     => 'image_mobile_3',
                     'required' => false,
-                    'filters' => array(
-                        array(
+                    'filters'  => [
+                        [
                             'name' => 'StringTrim',
-                        ),
-                    ),
-                ));
+                        ],
+                    ],
+                ]);
                 break;
 
             case 'html-web':
                 // html
-                $this->add(array(
-                    'name' => 'html',
+                $this->add([
+                    'name'     => 'html',
                     'required' => true,
-                    'filters' => array(
-                        array(
+                    'filters'  => [
+                        [
                             'name' => 'StringTrim',
-                        ),
-                    ),
-                ));
+                        ],
+                    ],
+                ]);
                 break;
 
             case 'script-web':
                 // script
-                $this->add(array(
-                    'name' => 'script',
+                $this->add([
+                    'name'     => 'script',
                     'required' => true,
-                    'filters' => array(
-                        array(
+                    'filters'  => [
+                        [
                             'name' => 'StringTrim',
-                        ),
-                    ),
-                ));
+                        ],
+                    ],
+                ]);
                 break;
 
         }
         // category
-        $this->add(array(
-            'name' => 'category',
+        $this->add([
+            'name'     => 'category',
             'required' => true,
-        ));
+        ]);
         // time_publish
-        $this->add(array(
-            'name' => 'time_publish',
+        $this->add([
+            'name'     => 'time_publish',
             'required' => true,
-        ));
+        ]);
         // time_expire
-        $this->add(array(
-            'name' => 'time_expire',
+        $this->add([
+            'name'     => 'time_expire',
             'required' => true,
-        ));
+        ]);
         // status
-        $this->add(array(
-            'name' => 'status',
+        $this->add([
+            'name'     => 'status',
             'required' => true,
-        ));
+        ]);
     }
 }	

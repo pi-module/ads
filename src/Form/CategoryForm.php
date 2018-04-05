@@ -18,7 +18,7 @@ use Pi\Form\Form as BaseForm;
 
 class CategoryForm extends BaseForm
 {
-	public function __construct($name = null, $option = array())
+    public function __construct($name = null, $option = [])
     {
         $this->option = $option;
         parent::__construct($name);
@@ -35,55 +35,55 @@ class CategoryForm extends BaseForm
     public function init()
     {
         // id
-        $this->add(array(
-            'name' => 'id',
-            'attributes' => array(
+        $this->add([
+            'name'       => 'id',
+            'attributes' => [
                 'type' => 'hidden',
-            ),
-        ));
+            ],
+        ]);
         // title
-        $this->add(array(
-            'name' => 'title',
-            'options' => array(
+        $this->add([
+            'name'       => 'title',
+            'options'    => [
                 'label' => __('Title'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
+            ],
+            'attributes' => [
+                'type'        => 'text',
                 'description' => '',
-                'required' => true,
-            )
-        ));
+                'required'    => true,
+            ],
+        ]);
         // height
-        $this->add(array(
-            'name' => 'height',
-            'options' => array(
+        $this->add([
+            'name'       => 'height',
+            'options'    => [
                 'label' => __('Height'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
+            ],
+            'attributes' => [
+                'type'        => 'text',
                 'description' => '',
-                'required' => true,
-            )
-        ));
+                'required'    => true,
+            ],
+        ]);
         // width
-        $this->add(array(
-            'name' => 'width',
-            'options' => array(
+        $this->add([
+            'name'       => 'width',
+            'options'    => [
                 'label' => __('Width'),
-            ),
-            'attributes' => array(
-                'type' => 'text',
+            ],
+            'attributes' => [
+                'type'        => 'text',
                 'description' => '',
-                'required' => true,
-            )
-        ));
+                'required'    => true,
+            ],
+        ]);
         // Save
-        $this->add(array(
-            'name' => 'submit',
-            'type' => 'submit',
-            'attributes' => array(
+        $this->add([
+            'name'       => 'submit',
+            'type'       => 'submit',
+            'attributes' => [
                 'value' => __('Submit'),
-            )
-        ));
+            ],
+        ]);
     }
 }
