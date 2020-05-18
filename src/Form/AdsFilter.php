@@ -14,7 +14,7 @@
 namespace Module\Ads\Form;
 
 use Pi;
-use Zend\InputFilter\InputFilter;
+use Laminas\InputFilter\InputFilter;
 
 class AdsFilter extends InputFilter
 {
