@@ -15,9 +15,9 @@ namespace Module\Ads\Controller\Front;
 
 use Pi;
 use Pi\Mvc\Controller\ActionController;
-use Zend\Db\Sql\Expression;
-use Zend\Http\Response;
-use Zend\Json\Json;
+use Laminas\Db\Sql\Expression;
+use Laminas\Http\Response;
+use Laminas\Json\Json;
 
 class IndexController extends ActionController
 {
