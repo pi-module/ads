@@ -4,7 +4,7 @@
     </div>
     <?php if (!empty($list1)) { ?>
         <h3><?php _e('List of active ads for web'); ?></h3>
-        <table class="table table-striped table-bordered table-condensed">
+        <table class="table table-striped table-bordered table-sm">
             <tr>
                 <th><?php _e('ID'); ?></th>
                 <th><?php _e('Information'); ?></th>
@@ -48,7 +48,7 @@
                             <?php if ($item['type'] == 'image') { ?>
                                 <img src="<?php echo $this->escape($item['image_url']); ?>"
                                      alt="<?php echo $this->escape($item['title']); ?>"
-                                     class="img-responsive img-thumbnail">
+                                     class="img-fluid img-thumbnail">
                             <?php } ?>
                         </div>
                     </td>
@@ -67,7 +67,7 @@
 
     <?php if (!empty($list2)) { ?>
         <h3><?php _e('List of active ads for mobile'); ?></h3>
-        <table class="table table-striped table-bordered table-condensed">
+        <table class="table table-striped table-bordered table-sm">
             <tr>
                 <th><?php _e('ID'); ?></th>
                 <th><?php _e('Information'); ?></th>
@@ -96,7 +96,7 @@
                             <?php if ($item['type'] == 'image') { ?>
                                 <img src="<?php echo $this->escape($item['image_url']); ?>"
                                      alt="<?php echo $this->escape($item['title']); ?>"
-                                     class="img-responsive img-thumbnail">
+                                     class="img-fluid img-thumbnail">
                             <?php } ?>
                         </div>
                     </td>
@@ -115,7 +115,7 @@
 
     <?php if (!empty($list3)) { ?>
         <h3><?php _e('List of nonpublish ads'); ?></h3>
-        <table class="table table-striped table-bordered table-condensed">
+        <table class="table table-striped table-bordered table-sm">
             <tr>
                 <th><?php _e('ID'); ?></th>
                 <th><?php _e('Information'); ?></th>
@@ -144,7 +144,7 @@
                             <?php if ($item['type'] == 'image') { ?>
                                 <img src="<?php echo $this->escape($item['image_url']); ?>"
                                      alt="<?php echo $this->escape($item['title']); ?>"
-                                     class="img-responsive img-thumbnail">
+                                     class="img-fluid img-thumbnail">
                             <?php } ?>
                         </div>
                     </td>
@@ -163,7 +163,7 @@
 
     <?php if (!empty($list4)) { ?>
         <h3><?php _e('List of expire ads'); ?></h3>
-        <table class="table table-striped table-bordered table-condensed">
+        <table class="table table-striped table-bordered table-sm">
             <tr>
                 <th><?php _e('ID'); ?></th>
                 <th><?php _e('Information'); ?></th>
@@ -192,7 +192,7 @@
                             <?php if ($item['type'] == 'image') { ?>
                                 <img src="<?php echo $this->escape($item['image_url']); ?>"
                                      alt="<?php echo $this->escape($item['title']); ?>"
-                                     class="img-responsive img-thumbnail">
+                                     class="img-fluid img-thumbnail">
                             <?php } ?>
                         </div>
                     </td>
@@ -211,7 +211,7 @@
 
     <?php if (!empty($list5)) { ?>
         <h3><?php _e('List of offline ads'); ?></h3>
-        <table class="table table-striped table-bordered table-condensed">
+        <table class="table table-striped table-bordered table-sm">
             <tr>
                 <th><?php _e('ID'); ?></th>
                 <th><?php _e('Information'); ?></th>
@@ -240,7 +240,7 @@
                             <?php if ($item['type'] == 'image') { ?>
                                 <img src="<?php echo $this->escape($item['image_url']); ?>"
                                      alt="<?php echo $this->escape($item['title']); ?>"
-                                     class="img-responsive img-thumbnail">
+                                     class="img-fluid img-thumbnail">
                             <?php } ?>
                         </div>
                     </td>
